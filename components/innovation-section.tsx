@@ -1,33 +1,41 @@
 "use client"
 import { Button } from "@/components/ui/button"
 import type React from "react"
-
 import { Play, X, Share2 } from "lucide-react"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 export default function InnovationSection() {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false)
+  const [showVideo, setShowVideo] = useState(false)
+  const [showText, setShowText] = useState(false)
 
-  const handlePlayVideo = () => {
-    setIsVideoModalOpen(true)
-  }
+  useEffect(() => {
+    // Animación inicial al cargar la página
+    setTimeout(() => setShowVideo(true), 200)    // primero el video
+    setTimeout(() => setShowText(true), 1400)    // después el texto
+  }, [])
 
-  const handleCloseModal = () => {
-    setIsVideoModalOpen(false)
-  }
-
+  const handlePlayVideo = () => setIsVideoModalOpen(true)
+  const handleCloseModal = () => setIsVideoModalOpen(false)
   const handleOverlayClick = (e: React.MouseEvent) => {
-    if (e.target === e.currentTarget) {
-      handleCloseModal()
-    }
+    if (e.target === e.currentTarget) handleCloseModal()
   }
 
   return (
     <>
-      <section className="py-16 px-4">
+      <section className="py-16 px-4 overflow-hidden">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
-          <div className="relative">
-            <img src="/plastigesa-factory-exterior.png" alt="Edificio Plastigesa" className="rounded-lg w-full" />
+          
+          {/* 🎥 Video con animación */}
+          <div
+            className={`relative transform transition-all duration-1000 ease-out
+              ${showVideo ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"}`}
+          >
+            <img
+              src="/plastigesa-factory-exterior.png"
+              alt="Edificio Plastigesa"
+              className="rounded-lg w-full shadow-lg"
+            />
             <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center rounded-lg">
               <Button
                 size="lg"
@@ -38,26 +46,35 @@ export default function InnovationSection() {
               </Button>
             </div>
           </div>
-          <div>
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Innovación y calidad en cada producto</h2>
+
+          {/* 📝 Texto con segunda animación */}
+          <div
+            className={`transform transition-all duration-1000 ease-out delay-500
+              ${showText ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"}`}
+          >
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">
+              Innovación y calidad en cada producto
+            </h2>
             <p className="text-gray-600 mb-4">
-              Con más de dos décadas de experiencia en el mercado, Plastigesa se ha consolidado como una empresa líder
-              en la fabricación de bolsas plásticas y productos plásticos de la más alta calidad. Contamos con personal
-              de la innovación, la calidad y el servicio al cliente nos ha permitido crear relaciones duraderas con
-              nuestros clientes y convertirnos en su aliado estratégico en cada negocio.
+              Con más de dos décadas de experiencia en el mercado, Plastigesa se ha consolidado
+              como una empresa líder en la fabricación de bolsas plásticas y productos plásticos
+              de la más alta calidad. Contamos con personal altamente capacitado, y nuestro compromiso
+              con la innovación, la calidad y el servicio al cliente nos ha permitido crear relaciones
+              duraderas con nuestros clientes y convertirnos en su aliado estratégico en cada negocio.
             </p>
           </div>
         </div>
       </section>
 
+      {/* 🎬 Modal del video */}
       {isVideoModalOpen && (
         <div
           className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4"
           onClick={handleOverlayClick}
         >
           <div className="bg-white rounded-2xl w-full max-w-4xl mx-auto overflow-hidden shadow-2xl">
-            {/* Modal Header */}
-            <div className="flex items-center justify-between p-4 bg-gradient-to-r bg-green-600 bg-green-700 text-white">
+            {/* Header */}
+            <div className="flex items-center justify-between p-4 bg-gradient-to-r from-green-600 to-green-700 text-white">
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
                   <Play className="w-4 h-4" />
@@ -80,7 +97,7 @@ export default function InnovationSection() {
               </div>
             </div>
 
-            {/* Video Player */}
+            {/* Video */}
             <div className="relative aspect-video bg-black">
               <iframe
                 src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&rel=0&modestbranding=1"
@@ -91,7 +108,7 @@ export default function InnovationSection() {
               />
             </div>
 
-            {/* Modal Footer */}
+            {/* Footer */}
             <div className="p-4 bg-gray-50 flex items-center justify-between">
               <a
                 href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"

@@ -6,6 +6,8 @@ export default function HeroSection() {
   const [currentTextIndex, setCurrentTextIndex] = useState(0)
   const [animate, setAnimate] = useState(false)
 
+  const [loaded, setLoaded] = useState(false) // 👈 estado para animación al cargar
+
   const rotatingTexts = [
     "empaques flexibles",
     "soluciones de embalaje",
@@ -18,13 +20,15 @@ export default function HeroSection() {
   const [pausedRight, setPausedRight] = useState(false)
 
   useEffect(() => {
+    // activar animación de entrada
+    setTimeout(() => setLoaded(true), 100)
+
     const interval = setInterval(() => {
-      // Dispara animación antes de cambiar texto
       setAnimate(true)
       setTimeout(() => {
         setCurrentTextIndex((prev) => (prev + 1) % rotatingTexts.length)
         setAnimate(false)
-      }, 400) // tiempo de animación
+      }, 400)
     }, 3000)
 
     return () => clearInterval(interval)
@@ -32,9 +36,10 @@ export default function HeroSection() {
 
   return (
     <section className="py-10 px-4 bg-gray-50 overflow-hidden">
-      {/* 🔥 Siempre 2 columnas */}
-      <div className="max-w-7xl mx-auto grid grid-cols-2 gap-6 items-center">
-        
+      <div
+        className={`max-w-7xl mx-auto grid grid-cols-2 gap-6 items-center transform transition-all duration-1000 ease-out
+        ${loaded ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"}`}
+      >
         {/* ─────────── Texto ─────────── */}
         <div className="pr-4">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-gray-900 mb-6 leading-snug">
