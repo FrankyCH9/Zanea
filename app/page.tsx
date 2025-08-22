@@ -12,6 +12,7 @@ import BlogSection from "@/components/blog-section";
 import LocationsSection from "@/components/locations-section";
 import ContactSection from "@/components/contact-section";
 import Footer from "@/components/footer";
+import AnimatedStats from "@/components/animated-stats";
 
 export default function PlastigesaPage() {
   return (
@@ -24,6 +25,7 @@ export default function PlastigesaPage() {
       <ClientLogosSection />
       <ProductsSection />
       <StatisticsSection />
+      <AnimatedStats/>
       <FAQSection />
       <BlogSection />
       <LocationsSection />
