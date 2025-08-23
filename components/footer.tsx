@@ -2,73 +2,47 @@
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white py-12 px-4">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-4 gap-8">
-          <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-sm">P</span>
-              </div>
-              <span className="font-bold text-xl">Plastigesa</span>
+    <footer className="bg-white text-gray-800 py-12 px-6 border-t border-gray-200">
+      <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8 items-start">
+        
+        {/* Logo y descripción */}
+        <div className="text-center md:text-left">
+          <div className="flex items-center justify-center md:justify-start gap-2 mb-4">
+            <div className="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center">
+              <span className="text-white font-bold text-sm">P</span>
             </div>
-            <p className="text-gray-400 mb-4">
-              Líderes en la fabricación de productos plásticos para la industria peruana.
-            </p>
+            <span className="font-bold text-lg">Plastigesa</span>
           </div>
+          <p className="text-gray-600 max-w-sm mx-auto md:mx-0">
+            Líderes en productos plásticos de calidad superior para la industria y el comercio.
+          </p>
 
-          <div>
-            <h3 className="font-semibold mb-4">Navegación</h3>
-            <div className="space-y-2">
-              <a href="#" className="block text-gray-400 hover:text-white">
-                Inicio
-              </a>
-              <a href="#" className="block text-gray-400 hover:text-white">
-                Nosotros
-              </a>
-              <a href="#" className="block text-gray-400 hover:text-white">
-                Productos
-              </a>
-              <a href="#" className="block text-gray-400 hover:text-white">
-                Blog
-              </a>
-              <a href="#" className="block text-gray-400 hover:text-white">
-                Contáctanos
-              </a>
-            </div>
-          </div>
-
-          <div>
-            <h3 className="font-semibold mb-4">Productos</h3>
-            <div className="space-y-2">
-              <a href="#" className="block text-gray-400 hover:text-white">
-                Bolsas de basura
-              </a>
-              <a href="#" className="block text-gray-400 hover:text-white">
-                Cintas adhesivas
-              </a>
-              <a href="#" className="block text-gray-400 hover:text-white">
-                Stretch film
-              </a>
-              <a href="#" className="block text-gray-400 hover:text-white">
-                Bolsas biodegradables
-              </a>
-            </div>
-          </div>
-
-          <div>
-            <h3 className="font-semibold mb-4">Contacto</h3>
-            <div className="space-y-2">
-              <p className="text-gray-400">+51 959952460</p>
-              <p className="text-gray-400">contacto@plastigesa.com</p>
-              <p className="text-gray-400">Arequipa, Perú</p>
-            </div>
+          {/* Redes sociales */}
+          <div className="flex justify-center md:justify-start gap-4 text-gray-500 mt-4">
+            <a href="#" className="hover:text-green-600">Fb</a>
+            <a href="#" className="hover:text-green-600">Ig</a>
+            <a href="#" className="hover:text-green-600">In</a>
+            <a href="#" className="hover:text-green-600">Tk</a>
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center">
-          <p className="text-gray-400">© 2024 Plastigesa. Todos los derechos reservados.</p>
+        {/* Navegación (más a la derecha, pero con espacio) */}
+        <div className="text-center md:text-left md:pl-16">
+          <h3 className="font-semibold mb-4">Navegación</h3>
+          <div className="space-y-2">
+            <a href="#" className="block text-gray-600 hover:text-green-600">Sobre nosotros</a>
+            <a href="#" className="block text-gray-600 hover:text-green-600">Productos</a>
+            <a href="#" className="block text-gray-600 hover:text-green-600">Blog</a>
+            <a href="#" className="block text-gray-600 hover:text-green-600">Contáctanos</a>
+          </div>
         </div>
+      </div>
+
+      {/* Copyright */}
+      <div className="border-t border-gray-200 mt-8 pt-6 text-center">
+        <p className="text-gray-500 text-sm">
+          © 2025 Plastigesa. Todos los derechos reservados.
+        </p>
       </div>
     </footer>
   )
