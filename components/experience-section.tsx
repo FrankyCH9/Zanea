@@ -90,7 +90,7 @@ export default function ExperienceSection() {
               {
                 title: "Control aviar",
                 desc: "Prevención de parásitos y enfermedades transmitidas por aves.",
-                img: "/nuestros servicios/control aviar/1.jpeg",
+                img: "public/nuestros servicios/control aviar/1.jpeg",
                 col: "md:col-span-1",
               },
             ].map((card, index) => (
