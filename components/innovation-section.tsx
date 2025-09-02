@@ -53,15 +53,22 @@ export default function InnovationSection() {
               ${showText ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"}`}
           >
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              Innovación y calidad en cada producto
+              NOSOTROS
             </h2>
-            <p className="text-gray-600 mb-4">
-              Con más de dos décadas de experiencia en el mercado, Plastigesa se ha consolidado
-              como una empresa líder en la fabricación de bolsas plásticas y productos plásticos
-              de la más alta calidad. Contamos con personal altamente capacitado, y nuestro compromiso
-              con la innovación, la calidad y el servicio al cliente nos ha permitido crear relaciones
-              duraderas con nuestros clientes y convertirnos en su aliado estratégico en cada negocio.
-            </p>
+
+            <div className="space-y-4 text-gray-600">
+              <p>
+                <span className="font-semibold text-gray-900">Misión:</span>{" "}
+                Dar soluciones eficientes a nuestros socios, asegurando la calidad y
+                satisfacción en la prestación de nuestros servicios.
+              </p>
+              <p>
+                <span className="font-semibold text-gray-900">Visión:</span>{" "}
+                Ser reconocidos a nivel nacional como una empresa líder en la prestación
+                de servicios en ingeniería, saneamiento ambiental y gestión en medio
+                ambiente.
+              </p>
+            </div>
           </div>
         </div>
       </section>
