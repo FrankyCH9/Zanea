@@ -54,7 +54,7 @@ export default function HeroSection() {
             Ofrecemos servicios especializados en Ingeniería, saneamiento ambiental y gestión en medio ambiente con el soporte de un grupo humano altamente especializado. Con altos estándares de calidad, manteniendo la satisfacción de nuestros clientes, la salud y seguridad de nuestros trabajadores y el cuidado del medio ambiente.
           </p>
           <Button className="bg-green-600 text-white hover:bg-green-700 text-lg sm:text-xl lg:text-2xl px-7 sm:px-9 lg:px-12 py-3 sm:py-4 lg:py-5 rounded-2xl shadow-lg transition hover:shadow-green-400/50">
-            Ver productos
+            •	Ver productos
           </Button>
         </div>
 
