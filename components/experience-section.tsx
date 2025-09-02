@@ -45,7 +45,6 @@ export default function ExperienceSection() {
             <h2 className="text-5xl font-bold text-gray-900 mb-6 leading-tight">
               Nuestra experiencia
             </h2>
-            
           </div>
 
           {/* Tarjetas */}
@@ -60,37 +59,37 @@ export default function ExperienceSection() {
               {
                 title: "Control de plagas",
                 desc: "Métodos seguros y eficaces contra plagas rastreras y voladoras.",
-                img: "/nuestros servicios/control de plagas/2.jpg",
+                img: "/nuestros-servicios/control-de-plagas/2.jpg",
                 col: "md:col-span-1",
               },
               {
                 title: "Desinfección de ambientes",
                 desc: "Eliminación de bacterias, virus y hongos en todo tipo de espacios.",
-                img: "/nuestros servicios/desinfeccion de ambientes/3.jpeg",
+                img: "/nuestros-servicios/desinfeccion-de-ambientes/3.jpeg",
                 col: "md:col-span-1",
               },
               {
                 title: "Reservorios de agua",
                 desc: "Limpieza profunda y desinfección de cisternas y tanques.",
-                img: "/nuestros servicios/LIMPIEZA Y DESINFECCION DE RESERVORIOS DE AGUA/2.jpeg",
+                img: "/nuestros-servicios/reservorios-limpieza/2.jpeg",
                 col: "md:col-span-1",
               },
               {
                 title: "Mantenimiento de reservorios",
                 desc: "Corrección de fallas y conservación de estructuras de agua.",
-                img: "/nuestros servicios/MANTENIMIENTO DE RESERVORIOS DE AGUA/1.jpeg",
+                img: "/nuestros-servicios/reservorios-mantenimiento/1.jpeg",
                 col: "md:col-span-1",
               },
               {
                 title: "Control de animales menores",
                 desc: "Reubicación segura de animales abandonados.",
-                img: "/nuestros servicios/CONTROL DE PLAGAS/3.jpeg",
+                img: "/nuestros-servicios/animales-menores/3.jpeg",
                 col: "md:col-span-1",
               },
               {
                 title: "Control aviar",
                 desc: "Prevención de parásitos y enfermedades transmitidas por aves.",
-                img: "/nuestros servicios/control aviar/1.jpeg",
+                img: "/nuestros-servicios/control-aviar/1.jpeg",
                 col: "md:col-span-1",
               },
             ].map((card, index) => (
