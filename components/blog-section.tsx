@@ -33,7 +33,7 @@ Metodologías:
 Elaboramos programas de manejo integral de control de plagas (MIP), de acuerdo a la problemática de cada cliente.  
 • Fumigación con Fosfina
     `,
-    image: "servicios/control/e.jpg",
+    image: "servicios/control/a.jpg",
     category: "Categoría",
     tag: "Etiqueta",
     industry: "Industria",

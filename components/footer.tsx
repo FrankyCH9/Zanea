@@ -1,6 +1,25 @@
 "use client"
+import React, { useState } from "react"
 
 export default function Footer() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+
+  // Función de scroll programático
+  const handleNav = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    e.preventDefault()
+
+    if (typeof window !== "undefined" && window.location.pathname !== "/") {
+      window.location.href = `/#${targetId}`
+      return
+    }
+
+    const el = document.getElementById(targetId)
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" })
+      history.replaceState(null, "", `#${targetId}`)
+    }
+  }
+
   return (
     <footer className="bg-white text-gray-800 py-12 px-6 border-t border-gray-200">
       <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8 items-start">
@@ -26,14 +45,38 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Navegación (más a la derecha, pero con espacio) */}
+        {/* Navegación */}
         <div className="text-center md:text-left md:pl-16">
           <h3 className="font-semibold mb-4">Navegación</h3>
           <div className="space-y-2">
-            <a href="#" className="block text-gray-600 hover:text-green-600">Sobre nosotros</a>
-            <a href="#" className="block text-gray-600 hover:text-green-600">Productos</a>
-            <a href="#" className="block text-gray-600 hover:text-green-600">Blog</a>
-            <a href="#" className="block text-gray-600 hover:text-green-600">Contáctanos</a>
+            <a
+              href="#StatisticsSection"
+              onClick={(e) => handleNav(e, "StatisticsSection")}
+              className="block text-gray-600 hover:text-green-600"
+            >
+              Sobre nosotros
+            </a>
+            <a
+              href="#BlogSection"
+              onClick={(e) => handleNav(e, "BlogSection")}
+              className="block text-gray-600 hover:text-green-600"
+            >
+              Productos
+            </a>
+            <a
+              href="#BlogSection"
+              onClick={(e) => handleNav(e, "")}
+              className="block text-gray-600 hover:text-green-600"
+            >
+              Blog
+            </a>
+            <a
+              href="#LocationsSection"
+              onClick={(e) => handleNav(e, "LocationsSection")}
+              className="block text-gray-600 hover:text-green-600"
+            >
+              Contáctanos
+            </a>
           </div>
         </div>
       </div>
