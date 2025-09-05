@@ -40,10 +40,10 @@ export default function ExperienceSection() {
           {/* Encabezado */}
           <div className="text-center mb-16">
             <span className="text-green-600 font-bold text-sm tracking-widest uppercase mb-4 block">
-              COMPROMETIDOS
+              comprometidos
             </span>
             <h2 className="text-5xl font-bold text-gray-900 mb-6 leading-tight">
-              Nuestra experiencia
+              nuestra experiencia
             </h2>
           </div>
 
@@ -51,45 +51,45 @@ export default function ExperienceSection() {
           <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-6 h-[650px]">
             {[
               {
-                title: "Equipo especializado",
-                desc: "Más de 20 años de experiencia en el rubro.",
+                title: "equipo especializado",
+                desc: "más de 20 años de experiencia en el rubro.",
                 img: "/inicio/equipo.jpeg",
                 col: "md:col-span-2 md:row-span-2",
               },
               {
-                title: "Control de plagas",
-                desc: "Métodos seguros y eficaces contra plagas rastreras y voladoras.",
-                img: "/nuestros-servicios/control-de-plagas/2.jpg",
+                title: "control de plagas",
+                desc: "métodos seguros y eficaces contra plagas rastreras y voladoras.",
+                img: "/servicios/plagas/2.jpg",
                 col: "md:col-span-1",
               },
               {
-                title: "Desinfección de ambientes",
-                desc: "Eliminación de bacterias, virus y hongos en todo tipo de espacios.",
-                img: "/nuestros-servicios/desinfeccion-de-ambientes/3.jpeg",
+                title: "desinfección de ambientes",
+                desc: "eliminación de bacterias, virus y hongos en todo tipo de espacios.",
+                img: "/servicios/ambientes/3.jpeg",
                 col: "md:col-span-1",
               },
               {
-                title: "Reservorios de agua",
-                desc: "Limpieza profunda y desinfección de cisternas y tanques.",
-                img: "/nuestros-servicios/reservorios-limpieza/2.jpeg",
+                title: "reservorios de agua",
+                desc: "limpieza profunda y desinfección de cisternas y tanques.",
+                img: "/servicios/reservoriosdeagua/2.jpeg",
                 col: "md:col-span-1",
               },
               {
-                title: "Mantenimiento de reservorios",
-                desc: "Corrección de fallas y conservación de estructuras de agua.",
-                img: "/nuestros-servicios/reservorios-mantenimiento/1.jpeg",
+                title: "mantenimiento de reservorios",
+                desc: "corrección de fallas y conservación de estructuras de agua.",
+                img: "/servicios/reservoriosdeagua/1.jpeg",
                 col: "md:col-span-1",
               },
               {
-                title: "Control de animales menores",
-                desc: "Reubicación segura de animales abandonados.",
-                img: "/nuestros-servicios/animales-menores/3.jpeg",
+                title: "control de animales menores",
+                desc: "reubicación segura de animales abandonados.",
+                img: "/servicios/plagas/3.jpeg",
                 col: "md:col-span-1",
               },
               {
-                title: "Control aviar",
-                desc: "Prevención de parásitos y enfermedades transmitidas por aves.",
-                img: "/nuestros-servicios/control-aviar/1.jpeg",
+                title: "control aviar",
+                desc: "prevención de parásitos y enfermedades transmitidas por aves.",
+                img: "/servicios/aviar/1.jpeg",
                 col: "md:col-span-1",
               },
             ].map((card, index) => (
@@ -120,3 +120,4 @@ export default function ExperienceSection() {
     </section>
   )
 }
+

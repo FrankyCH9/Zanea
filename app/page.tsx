@@ -5,7 +5,7 @@ import InnovationSection from "@/components/innovation-section";
 import ExperienceSection from "@/components/experience-section";
 import TestimonialSection from "@/components/testimonial-section";
 import ClientLogosSection from "@/components/client-logos-section";
-import ProductsSection from "@/components/products-section";
+// import ProductsSection from "@/components/products-section";
 import StatisticsSection from "@/components/statistics-section";
 import FAQSection from "@/components/faq-section";
 import BlogSection from "@/components/blog-section";
@@ -23,11 +23,11 @@ export default function PlastigesaPage() {
       <ExperienceSection />
       <TestimonialSection />
       <ClientLogosSection />
-      <ProductsSection />
+      <BlogSection />
+      {/* <ProductsSection /> */}
       <StatisticsSection />
       <AnimatedStats/>
       <FAQSection />
-      <BlogSection />
       <LocationsSection />
       <ContactSection />
       <Footer />
