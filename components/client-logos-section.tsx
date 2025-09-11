@@ -2,12 +2,24 @@
 import { useEffect, useRef, useState } from "react"
 
 const logos = [
-  "/abstract-logo-1.png",
-  "/abstract-logo-geometric.png",
-  "/abstract-logo-design-3.png",
-  "/abstract-logo-4.png",
-  "/abstract-logo-5.png",
-  "/company-logo-6.png",
+  "marcas/1.png",
+  "marcas/2.png",
+  "marcas/3.png",
+  "marcas/4.png",
+  "marcas/5.png",
+  "marcas/6.png",
+  "marcas/7.jpeg",
+  "marcas/8.png",
+  "marcas/9.png",
+  "marcas/10.png",
+  "marcas/11.png",
+  "marcas/12.png",
+  "marcas/13.png",
+  "marcas/14.png",
+  "marcas/15.png",
+  "marcas/16.png",
+  "marcas/17.png",
+  "marcas/18.png",
 ]
 
 export default function ClientLogosSection() {
@@ -31,35 +43,39 @@ export default function ClientLogosSection() {
 
   return (
     <>
-      {/* Estilos locales para animaciones */}
       <style jsx>{`
-        @keyframes slide-left {
-          0% {
-            transform: translateX(0%);
+        @keyframes scroll-left {
+          from {
+            transform: translateX(0);
           }
-          100% {
+          to {
             transform: translateX(-50%);
           }
         }
-        @keyframes slide-right {
-          0% {
+        @keyframes scroll-right {
+          from {
             transform: translateX(-50%);
           }
-          100% {
-            transform: translateX(0%);
+          to {
+            transform: translateX(0);
           }
         }
-        .animate-slide-left {
-          animation: slide-left 25s linear infinite;
+        .scroll-left {
+          animation: scroll-left 30s linear infinite;
         }
-        .animate-slide-right {
-          animation: slide-right 25s linear infinite;
+        .scroll-right {
+          animation: scroll-right 30s linear infinite;
+        }
+        /* Pausar animación al hacer hover */
+        .scroll-left:hover,
+        .scroll-right:hover {
+          animation-play-state: paused;
         }
       `}</style>
 
       <section
         ref={sectionRef}
-        className={`py-20 px-4 bg-gray-50 overflow-hidden transition-all duration-1000 ${
+        className={`py-20 px-4 bg-white overflow-hidden transition-all duration-1000 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}
       >
@@ -77,28 +93,36 @@ export default function ClientLogosSection() {
 
           {/* Fila 1 (izquierda) */}
           <div className="relative flex overflow-hidden mb-10">
-            <div className="flex animate-slide-left gap-16 items-center">
+            <div className="flex scroll-left gap-16 items-center min-w-max">
               {logos.concat(logos).map((logo, i) => (
-                <img
+                <div
                   key={`row1-${i}`}
-                  src={logo}
-                  alt={`Cliente ${i + 1}`}
-                  className="h-20 w-auto grayscale opacity-70 hover:opacity-100 transition mx-auto"
-                />
+                  className="w-32 h-20 flex items-center justify-center"
+                >
+                  <img
+                    src={logo}
+                    alt={`Cliente ${i + 1}`}
+                    className="max-w-full max-h-full object-contain transition-transform duration-300 hover:scale-110"
+                  />
+                </div>
               ))}
             </div>
           </div>
 
           {/* Fila 2 (derecha) */}
           <div className="relative flex overflow-hidden">
-            <div className="flex animate-slide-right gap-16 items-center">
+            <div className="flex scroll-right gap-16 items-center min-w-max">
               {logos.concat(logos).map((logo, i) => (
-                <img
+                <div
                   key={`row2-${i}`}
-                  src={logo}
-                  alt={`Cliente ${i + 1}`}
-                  className="h-20 w-auto grayscale opacity-70 hover:opacity-100 transition mx-auto"
-                />
+                  className="w-32 h-20 flex items-center justify-center"
+                >
+                  <img
+                    src={logo}
+                    alt={`Cliente ${i + 1}`}
+                    className="max-w-full max-h-full object-contain transition-transform duration-300 hover:scale-110"
+                  />
+                </div>
               ))}
             </div>
           </div>

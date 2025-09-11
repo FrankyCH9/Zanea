@@ -1,5 +1,6 @@
 "use client"
 import React, { useState } from "react"
+import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react"
 
 export default function Footer() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -26,11 +27,14 @@ export default function Footer() {
         
         {/* Logo y descripción */}
         <div className="text-center md:text-left">
-          <div className="flex items-center justify-center md:justify-start gap-2 mb-4">
-            <div className="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-sm">P</span>
-            </div>
-            <span className="font-bold text-lg">Plastigesa</span>
+          <div className="flex items-center justify-center md:justify-start gap-3 mb-4">
+            {/* Logo como imagen */}
+            <img 
+              src="experiencia/logo.jpeg" 
+              alt="Plastigesa Logo" 
+              className="w-20 h-20 object-contain"
+            />
+
           </div>
           <p className="text-gray-600 max-w-sm mx-auto md:mx-0">
             Líderes en productos plásticos de calidad superior para la industria y el comercio.
@@ -38,10 +42,18 @@ export default function Footer() {
 
           {/* Redes sociales */}
           <div className="flex justify-center md:justify-start gap-4 text-gray-500 mt-4">
-            <a href="#" className="hover:text-green-600">Fb</a>
-            <a href="#" className="hover:text-green-600">Ig</a>
-            <a href="#" className="hover:text-green-600">In</a>
-            <a href="#" className="hover:text-green-600">Tk</a>
+            <a href="https://www.facebook.com/saneagroup?locale=es_LA" target="_blank" rel="noopener noreferrer" className="hover:text-green-600">
+              <Facebook size={20} />
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer" className="hover:text-green-600">
+              <Instagram size={20} />
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer" className="hover:text-green-600">
+              <Linkedin size={20} />
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer" className="hover:text-green-600">
+              <Twitter size={20} />
+            </a>
           </div>
         </div>
 
@@ -65,7 +77,7 @@ export default function Footer() {
             </a>
             <a
               href="#BlogSection"
-              onClick={(e) => handleNav(e, "")}
+              onClick={(e) => handleNav(e, "BlogSection")}
               className="block text-gray-600 hover:text-green-600"
             >
               Blog

@@ -9,11 +9,10 @@ export default function Header() {
 
   const toggleMobileMenu = () => setIsMobileMenuOpen(v => !v)
 
-  // Navegación con scroll programático (funciona incluso si # no responde)
+  // Navegación con scroll programático (misma funcionalidad original)
   const handleNav = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault()
 
-    // Si el header se usa en otra ruta, manda a la home con el hash
     if (typeof window !== "undefined" && window.location.pathname !== "/") {
       window.location.href = `/#${targetId}`
       return
@@ -22,7 +21,6 @@ export default function Header() {
     const el = document.getElementById(targetId)
     if (el) {
       el.scrollIntoView({ behavior: "smooth", block: "start" })
-      // Actualiza el hash sin recargar
       history.replaceState(null, "", `#${targetId}`)
     }
     setIsMobileMenuOpen(false)
@@ -32,12 +30,13 @@ export default function Header() {
     <>
       <header className="bg-white shadow-sm relative z-50">
         <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-          {/* Logo */}
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-sm">P</span>
-            </div>
-            <span className="font-bold text-xl text-gray-900">Plastigesa</span>
+          {/* Logo reemplazado con imagen */}
+          <div className="flex items-center">
+            <img
+              src="experiencia/logo.jpeg" // 🔹 reemplaza con la ruta real de tu logo
+              alt="Logo Plastigesa"
+              className="h-14 w-auto"
+            />
           </div>
 
           {/* Menú escritorio */}
@@ -51,7 +50,7 @@ export default function Header() {
             <a href="#BlogSection" onClick={(e) => handleNav(e, "BlogSection")} className="text-gray-700 hover:text-green-600">
               Servicios
             </a>
-            <a href="#BlogSection" onClick={(e) => handleNav(e, "")} className="text-gray-700 hover:text-green-600">
+            <a href="#BlogSection" onClick={(e) => handleNav(e, "BlogSection")} className="text-gray-700 hover:text-green-600">
               Blog
             </a>
             <a href="#LocationsSection" onClick={(e) => handleNav(e, "LocationsSection")} className="text-gray-700 hover:text-green-600">
@@ -90,12 +89,12 @@ export default function Header() {
       >
         <div className="flex flex-col h-full">
           <div className="flex items-center justify-between px-4 py-5 border-b border-gray-100">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-sm">P</span>
-              </div>
-              <span className="font-bold text-xl text-gray-900">Plastigesa</span>
-            </div>
+            {/* Logo en menú móvil */}
+            <img
+              src="experiencia/logo.jpeg" // 🔹 misma ruta del logo
+              alt="Logo Plastigesa"
+              className="h-10 w-auto"
+            />
             <button
               onClick={toggleMobileMenu}
               className="p-1 text-gray-500 hover:text-gray-700"
@@ -105,6 +104,7 @@ export default function Header() {
             </button>
           </div>
 
+          {/* Menú + botón cotización integrado */}
           <nav className="flex-1 px-4 pt-8">
             <div className="space-y-8">
               <a href="#HeroSection" onClick={(e) => handleNav(e, "HeroSection")} className="block text-gray-800 hover:text-green-600 text-base font-medium">
@@ -113,7 +113,7 @@ export default function Header() {
               <a href="#StatisticsSection" onClick={(e) => handleNav(e, "StatisticsSection")} className="block text-gray-800 hover:text-green-600 text-base font-medium">
                 Nosotros
               </a>
-              <a href="StatisticsSection" onClick={(e) => handleNav(e, "ProductsSection")} className="block text-gray-800 hover:text-green-600 text-base font-medium">
+              <a href="#BlogSection" onClick={(e) => handleNav(e, "BlogSection")} className="block text-gray-800 hover:text-green-600 text-base font-medium">
                 Servicios
               </a>
               <a href="#BlogSection" onClick={(e) => handleNav(e, "BlogSection")} className="block text-gray-800 hover:text-green-600 text-base font-medium">
@@ -122,17 +122,16 @@ export default function Header() {
               <a href="#ContactSection" onClick={(e) => handleNav(e, "ContactSection")} className="block text-gray-800 hover:text-green-600 text-base font-medium">
                 Contáctanos
               </a>
+
+              {/* 🔹 Botón junto a los links */}
+              <Button
+                className="w-full bg-gray-900 text-white hover:bg-gray-800 py-3 rounded-lg font-medium"
+                onClick={toggleMobileMenu}
+              >
+                Solicitar cotización
+              </Button>
             </div>
           </nav>
-
-          <div className="p-4">
-            <Button
-              className="w-full bg-gray-900 text-white hover:bg-gray-800 py-3 rounded-lg font-medium"
-              onClick={toggleMobileMenu}
-            >
-              Solicitar cotización
-            </Button>
-          </div>
         </div>
       </div>
     </>

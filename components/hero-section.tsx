@@ -1,11 +1,12 @@
-"use client"
-import { Button } from "@/components/ui/button"
-import { useState, useEffect } from "react"
+"use client";
+import { Button } from "@/components/ui/button";
+import { useState, useEffect } from "react";
+import Link from "next/link";
 
 export default function HeroSection() {
-  const [currentTextIndex, setCurrentTextIndex] = useState(0)
-  const [animate, setAnimate] = useState(false)
-  const [loaded, setLoaded] = useState(false)
+  const [currentTextIndex, setCurrentTextIndex] = useState(0);
+  const [animate, setAnimate] = useState(false);
+  const [loaded, setLoaded] = useState(false);
 
   const rotatingTexts = [
     "Mantenimiento de reservorios de agua.",
@@ -14,24 +15,36 @@ export default function HeroSection() {
     "Limpieza y desinfección de reservorios de agua",
     "Control aviar y animales menores",
     "Consultoría en seguridad y medio ambiente",
-  ]
+  ];
 
-  const [pausedLeft, setPausedLeft] = useState(false)
-  const [pausedRight, setPausedRight] = useState(false)
+  const [pausedLeft, setPausedLeft] = useState(false);
+  const [pausedRight, setPausedRight] = useState(false);
+
+  // 👉 Aquí definimos handleNav
+  const handleNav = (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+    id: string
+  ) => {
+    e.preventDefault();
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   useEffect(() => {
-    setTimeout(() => setLoaded(true), 100)
+    setTimeout(() => setLoaded(true), 100);
 
     const interval = setInterval(() => {
-      setAnimate(true)
+      setAnimate(true);
       setTimeout(() => {
-        setCurrentTextIndex((prev) => (prev + 1) % rotatingTexts.length)
-        setAnimate(false)
-      }, 400)
-    }, 3000)
+        setCurrentTextIndex((prev) => (prev + 1) % rotatingTexts.length);
+        setAnimate(false);
+      }, 400);
+    }, 3000);
 
-    return () => clearInterval(interval)
-  }, [])
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section className="py-14 px-6 bg-gray-50 overflow-hidden">
@@ -45,16 +58,33 @@ export default function HeroSection() {
             Tu aliado en <br />
             <span
               className={`text-green-600 inline-block transition-all duration-500 ease-in-out
-              ${animate ? "opacity-0 translate-y-3" : "opacity-100 translate-y-0"}`}
+              ${
+                animate
+                  ? "opacity-0 translate-y-3"
+                  : "opacity-100 translate-y-0"
+              }`}
             >
               {rotatingTexts[currentTextIndex]}
             </span>
           </h1>
           <p className="text-lg sm:text-xl lg:text-2xl text-gray-600 mb-8 max-w-2xl">
-            Ofrecemos servicios especializados en Ingeniería, saneamiento ambiental y gestión en medio ambiente con el soporte de un grupo humano altamente especializado. Con altos estándares de calidad, manteniendo la satisfacción de nuestros clientes, la salud y seguridad de nuestros trabajadores y el cuidado del medio ambiente.
+            Ofrecemos servicios especializados en Ingeniería, saneamiento
+            ambiental y gestión en medio ambiente con el soporte de un grupo
+            humano altamente especializado. Con altos estándares de calidad,
+            manteniendo la satisfacción de nuestros clientes, la salud y
+            seguridad de nuestros trabajadores y el cuidado del medio ambiente.
           </p>
-          <Button className="bg-green-600 text-white hover:bg-green-700 text-lg sm:text-xl lg:text-2xl px-7 sm:px-9 lg:px-12 py-3 sm:py-4 lg:py-5 rounded-2xl shadow-lg transition hover:shadow-green-400/50">
-            •	Ver productos
+          <Button
+            asChild
+            onClick={(e) => handleNav(e, "BlogSection")}
+            className="bg-green-600 text-white hover:bg-green-700 
+             text-lg sm:text-xl lg:text-2xl 
+             px-7 sm:px-9 lg:px-12 
+             py-3 sm:py-4 lg:py-5 
+             rounded-2xl shadow-lg 
+             transition hover:shadow-green-400/50"
+          >
+            <Link href="#BlogSection">Ver Servicios</Link>
           </Button>
         </div>
 
@@ -71,14 +101,37 @@ export default function HeroSection() {
             onMouseLeave={() => setPausedLeft(false)}
           >
             <div className={`carousel-up ${pausedLeft ? "pause" : ""}`}>
-              <img src="/white-plastic-bags.png" alt="Bolsas plásticas blancas"
-                className="w-full h-28 sm:h-32 md:h-36 lg:h-40 object-cover rounded-lg mb-4 shadow-md" />
-              <img src="/green-plastic-containers.png" alt="Contenedores verdes"
-                className="w-full h-28 sm:h-32 md:h-36 lg:h-40 object-cover rounded-lg mb-4 shadow-md" />
-              <img src="/white-plastic-bags.png" alt="Bolsas plásticas blancas"
-                className="w-full h-28 sm:h-32 md:h-36 lg:h-40 object-cover rounded-lg mb-4 shadow-md" />
-              <img src="/green-plastic-containers.png" alt="Contenedores verdes"
-                className="w-full h-28 sm:h-32 md:h-36 lg:h-40 object-cover rounded-lg mb-4 shadow-md" />
+              <img
+                src="servicios/consultoria/1.jpeg"
+                alt="Bolsas plásticas blancas"
+                className="w-full h-28 sm:h-32 md:h-36 lg:h-40 object-cover rounded-lg mb-4 shadow-md"
+              />
+              <img
+                src="servicios/control/a.jpg"
+                alt="Contenedores verdes"
+                className="w-full h-28 sm:h-32 md:h-36 lg:h-40 object-cover rounded-lg mb-4 shadow-md"
+              />
+              <img
+                src="servicios/controla/a.jpeg"
+                alt="Bolsas plásticas blancas"
+                className="w-full h-28 sm:h-32 md:h-36 lg:h-40 object-cover rounded-lg mb-4 shadow-md"
+              />
+              <img
+                src="servicios/controlav/a.jpeg"
+                alt="Contenedores verdes"
+                className="w-full h-28 sm:h-32 md:h-36 lg:h-40 object-cover rounded-lg mb-4 shadow-md"
+              />
+              <img
+                src="servicios/desinfeccion/b.jpeg"
+                alt="Contenedores verdes"
+                className="w-full h-28 sm:h-32 md:h-36 lg:h-40 object-cover rounded-lg mb-4 shadow-md"
+              />
+              <img
+                src="servicios/limpieza/c.jpeg"
+                alt="Contenedores verdes"
+                className="w-full h-28 sm:h-32 md:h-36 lg:h-40 object-cover rounded-lg mb-4 shadow-md"
+              />
+              
             </div>
           </div>
 
@@ -89,18 +142,35 @@ export default function HeroSection() {
             onMouseLeave={() => setPausedRight(false)}
           >
             <div className={`carousel-down ${pausedRight ? "pause" : ""}`}>
-              <img src="/brown-plastic-bags.png" alt="Bolsas plásticas marrones"
-                className="w-full h-28 sm:h-32 md:h-36 lg:h-40 object-cover rounded-lg mb-4 shadow-md" />
-              <img src="/blue-plastic-containers.png" alt="Contenedores azules"
-                className="w-full h-28 sm:h-32 md:h-36 lg:h-40 object-cover rounded-lg mb-4 shadow-md" />
-              <img src="/brown-plastic-bags.png" alt="Bolsas plásticas marrones"
-                className="w-full h-28 sm:h-32 md:h-36 lg:h-40 object-cover rounded-lg mb-4 shadow-md" />
-              <img src="/blue-plastic-containers.png" alt="Contenedores azules"
-                className="w-full h-28 sm:h-32 md:h-36 lg:h-40 object-cover rounded-lg mb-4 shadow-md" />
+              <img
+                src="servicios/mantenimiento/d.jpeg"
+                alt="Contenedores verdes"
+                className="w-full h-28 sm:h-32 md:h-36 lg:h-40 object-cover rounded-lg mb-4 shadow-md"
+              />
+              <img
+                src="servicios/limpieza/c.jpeg"
+                alt="Contenedores verdes"
+                className="w-full h-28 sm:h-32 md:h-36 lg:h-40 object-cover rounded-lg mb-4 shadow-md"
+              />
+              <img
+                src="servicios/desinfeccion/b.jpeg"
+                alt="Contenedores verdes"
+                className="w-full h-28 sm:h-32 md:h-36 lg:h-40 object-cover rounded-lg mb-4 shadow-md"
+              />
+              <img
+                src="servicios/controla/a.jpeg"
+                alt="Bolsas plásticas blancas"
+                className="w-full h-28 sm:h-32 md:h-36 lg:h-40 object-cover rounded-lg mb-4 shadow-md"
+              />
+              <img
+                src="servicios/controla/a.jpeg"
+                alt="Bolsas plásticas blancas"
+                className="w-full h-28 sm:h-32 md:h-36 lg:h-40 object-cover rounded-lg mb-4 shadow-md"
+              />
             </div>
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }

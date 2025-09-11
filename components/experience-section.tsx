@@ -27,6 +27,16 @@ export default function ExperienceSection() {
     }
   }, [])
 
+  const cards = [
+    { title: "equipo especializado", img: "experiencia/p.jpeg", col: "col-span-2 row-span-2" },
+    { title: "control de plagas", img: "/servicios/control/a.jpg", col: "" },
+    { title: "desinfección de ambientes", img: "/servicios/desinfeccion/b.jpeg", col: "" },
+    { title: "reservorios de agua", img: "/servicios/limpieza/c.jpeg", col: "" },
+    { title: "mantenimiento de reservorios", img: "/servicios/mantenimiento/d.jpeg", col: "" },
+    { title: "control de animales menores", img: "/servicios/controlav/a.jpeg", col: "" },
+    { title: "control aviar", img: "/servicios/controla/a.jpeg", col: "" },
+  ]
+
   return (
     <section
       ref={sectionRef}
@@ -48,51 +58,19 @@ export default function ExperienceSection() {
           </div>
 
           {/* Tarjetas */}
-          <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-6 h-[650px]">
-            {[
-              {
-                title: "equipo especializado",
-                desc: "más de 20 años de experiencia en el rubro.",
-                img: "/inicio/equipo.jpeg",
-                col: "md:col-span-2 md:row-span-2",
-              },
-              {
-                title: "control de plagas",
-                desc: "métodos seguros y eficaces contra plagas rastreras y voladoras.",
-                img: "/servicios/plagas/2.jpg",
-                col: "md:col-span-1",
-              },
-              {
-                title: "desinfección de ambientes",
-                desc: "eliminación de bacterias, virus y hongos en todo tipo de espacios.",
-                img: "/servicios/ambientes/3.jpeg",
-                col: "md:col-span-1",
-              },
-              {
-                title: "reservorios de agua",
-                desc: "limpieza profunda y desinfección de cisternas y tanques.",
-                img: "/servicios/reservoriosdeagua/2.jpeg",
-                col: "md:col-span-1",
-              },
-              {
-                title: "mantenimiento de reservorios",
-                desc: "corrección de fallas y conservación de estructuras de agua.",
-                img: "/servicios/reservoriosdeagua/1.jpeg",
-                col: "md:col-span-1",
-              },
-              {
-                title: "control de animales menores",
-                desc: "reubicación segura de animales abandonados.",
-                img: "/servicios/plagas/3.jpeg",
-                col: "md:col-span-1",
-              },
-              {
-                title: "control aviar",
-                desc: "prevención de parásitos y enfermedades transmitidas por aves.",
-                img: "/servicios/aviar/1.jpeg",
-                col: "md:col-span-1",
-              },
-            ].map((card, index) => (
+          <div
+            className="
+              grid 
+              grid-cols-2       /* mínimo siempre 2 columnas */
+              sm:grid-cols-2    
+              md:grid-cols-3    
+              lg:grid-cols-4    
+              xl:grid-cols-5    
+              gap-6 
+              auto-rows-[180px] sm:auto-rows-[220px] md:auto-rows-[260px] lg:auto-rows-[300px]
+            "
+          >
+            {cards.map((card, index) => (
               <Card
                 key={index}
                 className={`relative overflow-hidden rounded-2xl shadow-xl transition-all duration-500 group ${card.col}
@@ -107,10 +85,9 @@ export default function ExperienceSection() {
 
                 {/* Contenido encima */}
                 <CardContent className="absolute bottom-0 p-6 text-white z-10 bg-gradient-to-t from-black/70 via-black/30 to-transparent">
-                  <h3 className="text-2xl font-bold mb-2 drop-shadow-lg">
+                  <h3 className="text-base sm:text-lg md:text-xl font-bold mb-2 drop-shadow-lg">
                     {card.title}
                   </h3>
-                  <p className="text-sm md:text-base opacity-90">{card.desc}</p>
                 </CardContent>
               </Card>
             ))}
@@ -120,4 +97,3 @@ export default function ExperienceSection() {
     </section>
   )
 }
-

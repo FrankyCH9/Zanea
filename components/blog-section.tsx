@@ -38,7 +38,6 @@ Elaboramos programas de manejo integral de control de plagas (MIP), de acuerdo a
     tag: "Etiqueta",
     industry: "Industria",
   },
-
   {
     id: 2,
     title: "DESINFECCIÓN DE AMBIENTES",
@@ -55,7 +54,6 @@ Nuestros productos:
     tag: "Medio Ambiente",
     industry: "Agua",
   },
-
   {
     id: 3,
     title: "LIMPIEZA Y DESINFECCIÓN DE RESERVORIOS DE AGUA",
@@ -76,7 +74,6 @@ Cumplimos altos estándares de calidad y seguridad:
     tag: "Innovación",
     industry: "Software",
   },
-
   {
     id: 4,
     title: "MANTENIMIENTO DE RESERVORIOS DE AGUA",
@@ -105,7 +102,6 @@ Tablero electrónico:
     tag: "Capacitación",
     industry: "Servicios",
   },
-
   {
     id: 5,
     title: "CONTROL DE ANIMALES MENORES",
@@ -122,7 +118,6 @@ Puedes escribir recomendaciones, casos de estudio o guías prácticas.
     tag: "Prevención",
     industry: "Industria",
   },
-
   {
     id: 6,
     title: "CONTROL AVIAR",
@@ -143,7 +138,6 @@ Metodología de tratamiento:
     tag: "Sostenibilidad",
     industry: "Medio Ambiente",
   },
-
   {
     id: 7,
     title: "CONSULTORÍA EN SEGURIDAD Y MEDIO AMBIENTE",
@@ -236,12 +230,10 @@ export default function BlogSection() {
         }`}
       >
         <div className="max-w-7xl mx-auto text-center">
-          <span className="text-green-600 font-medium">BLOG</span>
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Últimos artículos
-          </h2>
+          <span className="text-green-600 font-medium">Nuestros</span>
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">Servicios</h2>
           <p className="text-gray-600 mb-12">
-            Descubre las novedades y actualizaciones de nuestro blog
+            Descubre las novedades y actualizaciones de nuestros servicios
           </p>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -253,7 +245,7 @@ export default function BlogSection() {
                   className="md:col-span-3 flex justify-center"
                 >
                   <Card
-                    className={`overflow-hidden text-left rounded-2xl shadow-lg bg-white card-hover w-full md:w-1/3 ${
+                    className={`overflow-hidden text-left rounded-2xl shadow-lg bg-white card-hover flex flex-col w-full md:w-1/3 ${
                       isVisible ? "flip-animate" : "opacity-0"
                     }`}
                   >
@@ -264,7 +256,7 @@ export default function BlogSection() {
                         className="absolute inset-0 w-full h-full object-cover rounded-t-2xl"
                       />
                     </div>
-                    <CardContent className="p-6">
+                    <CardContent className="p-6 flex flex-col flex-1">
                       <h3 className="font-semibold text-gray-900 mb-2">
                         {post.title}
                       </h3>
@@ -283,23 +275,28 @@ export default function BlogSection() {
                         </div>
                       )}
 
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        className="w-full bg-transparent"
-                        onClick={() =>
-                          setExpanded(expanded === post.id ? null : post.id)
-                        }
-                      >
-                        {expanded === post.id ? "Mostrar menos" : "Leer más"}
-                      </Button>
+                      {/* Botón alineado abajo */}
+                      <div className="mt-auto">
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          className="w-full bg-transparent"
+                          onClick={() =>
+                            setExpanded(expanded === post.id ? null : post.id)
+                          }
+                        >
+                          {expanded === post.id
+                            ? "Mostrar menos"
+                            : "Leer más"}
+                        </Button>
+                      </div>
                     </CardContent>
                   </Card>
                 </div>
               ) : (
                 <Card
                   key={post.id}
-                  className={`overflow-hidden text-left rounded-2xl shadow-lg bg-white card-hover ${
+                  className={`overflow-hidden text-left rounded-2xl shadow-lg bg-white card-hover flex flex-col ${
                     isVisible ? "flip-animate" : "opacity-0"
                   }`}
                 >
@@ -310,7 +307,7 @@ export default function BlogSection() {
                       className="absolute inset-0 w-full h-full object-cover rounded-t-2xl"
                     />
                   </div>
-                  <CardContent className="p-6">
+                  <CardContent className="p-6 flex flex-col flex-1">
                     <h3 className="font-semibold text-gray-900 mb-2">
                       {post.title}
                     </h3>
@@ -329,16 +326,19 @@ export default function BlogSection() {
                       </div>
                     )}
 
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="w-full bg-transparent"
-                      onClick={() =>
-                        setExpanded(expanded === post.id ? null : post.id)
-                      }
-                    >
-                      {expanded === post.id ? "Mostrar menos" : "Leer más"}
-                    </Button>
+                    {/* Botón alineado abajo */}
+                    <div className="mt-auto">
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="w-full bg-transparent"
+                        onClick={() =>
+                          setExpanded(expanded === post.id ? null : post.id)
+                        }
+                      >
+                        {expanded === post.id ? "Mostrar menos" : "Leer más"}
+                      </Button>
+                    </div>
                   </CardContent>
                 </Card>
               )

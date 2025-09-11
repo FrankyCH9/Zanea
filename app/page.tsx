@@ -23,10 +23,10 @@ export default function PlastigesaPage() {
         <HeroSection />
       </section>
 
-      <section id="InnovationSection" className="scroll-mt-24">
-        <InnovationSection />
+      <section id="StatisticsSection" className="scroll-mt-24">
+        <StatisticsSection />
       </section>
-
+      
       <section id="ExperienceSection" className="scroll-mt-24">
         <ExperienceSection />
       </section>
@@ -42,8 +42,9 @@ export default function PlastigesaPage() {
       {/* <section id="ProductsSection" className="scroll-mt-24">
         <ProductsSection />
       </section> */}
-      <section id="StatisticsSection" className="scroll-mt-24">
-        <StatisticsSection />
+      
+      <section id="InnovationSection" className="scroll-mt-24">
+        <InnovationSection />
       </section>
       
       <section id="BlogSection" className="scroll-mt-24">

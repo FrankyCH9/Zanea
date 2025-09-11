@@ -21,12 +21,12 @@ export default function ContactSection() {
             <div className="space-y-4">
               <div>
                 <p className="font-medium text-gray-900">Teléfono:</p>
-                <p className="text-gray-600">+51 959952460</p>
+                <p className="text-gray-600">+51 998 998 318 </p>
               </div>
 
               <div>
                 <p className="font-medium text-gray-900">Email:</p>
-                <p className="text-gray-600">contacto@plastigesa.com • ventas@plastigesa.com</p>
+                <p className="text-gray-600">comercial@saneagroupperu.com</p>
               </div>
             </div>
           </div>
