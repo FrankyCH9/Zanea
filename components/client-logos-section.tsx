@@ -7,7 +7,7 @@ const logos = [
   "marcas/3.png",
   "marcas/4.png",
   "marcas/5.png",
-  "marcas/6.png",
+  "marcas/6.jpg",
   "marcas/7.jpeg",
   "marcas/8.png",
   "marcas/9.png",

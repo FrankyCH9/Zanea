@@ -37,7 +37,7 @@ export default function Footer() {
 
           </div>
           <p className="text-gray-600 max-w-sm mx-auto md:mx-0">
-            Líderes en productos plásticos de calidad superior para la industria y el comercio.
+            Líderes en Desinfección  de calidad superior para la industria y el comercio.
           </p>
 
           {/* Redes sociales */}
