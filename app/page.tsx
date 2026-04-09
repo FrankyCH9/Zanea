@@ -17,16 +17,11 @@ import AnimatedStats from "@/components/animated-stats";
 export default function PlastigesaPage() {
   return (
     <div className="min-h-screen bg-white">
-      <Header />
 
       <section id="HeroSection" className="scroll-mt-24">
         <HeroSection />
       </section>
 
-      <section id="StatisticsSection" className="scroll-mt-24">
-        <StatisticsSection />
-      </section>
-      
       <section id="ExperienceSection" className="scroll-mt-24">
         <ExperienceSection />
       </section>
@@ -35,9 +30,7 @@ export default function PlastigesaPage() {
         <TestimonialSection />
       </section>
 
-      <section id="ClientLogosSection" className="scroll-mt-24">
-        <ClientLogosSection />
-      </section>
+     
 
       {/* <section id="ProductsSection" className="scroll-mt-24">
         <ProductsSection />

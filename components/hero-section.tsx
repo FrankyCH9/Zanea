@@ -1,176 +1,144 @@
-"use client";
-import { Button } from "@/components/ui/button";
-import { useState, useEffect } from "react";
-import Link from "next/link";
+'use client';
+
+import { useState } from 'react';
+
+const galleryItems = [
+  {
+    id: 1,
+    title: 'INSPECCIÓN SANITARIA',
+    description:
+      'Ofrecemos inspección sanitaria continua con equipos especializados, como cámaras de profundidad, linternas UV y lentes de inspección. Además, nuestros colaboradores están capacitados para detectar plagas y realizamos estudios conforme a la Norma BRCSG.',
+    mainImage:
+      'https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=1600&h=900&fit=crop',
+  },
+  {
+    id: 2,
+    title: 'CONTROL DE PLAGAS',
+    description: 'Soluciones efectivas para el control de plagas con equipos especializados y métodos seguros.',
+    mainImage:
+      'https://images.unsplash.com/photo-1532996122724-8f3c2cd83c5d?w=1600&h=900&fit=crop',
+  },
+  {
+    id: 3,
+    title: 'CONTROL AVIAR',
+    description: 'Control biológico autorizado para aves consideradas plagas.',
+    mainImage:
+      'https://images.unsplash.com/photo-1554146297-4b58f8104c16?w=1600&h=900&fit=crop',
+  },
+  {
+    id: 4,
+    title: 'LIMPIEZA',
+    description: 'Servicios profesionales de limpieza especializada.',
+    mainImage:
+      'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1600&h=900&fit=crop',
+  },
+  {
+    id: 5,
+    title: 'CAPACITACIONES',
+    description: 'Programas de capacitación profesional para su equipo.',
+    mainImage:
+      'https://images.unsplash.com/photo-1552664730-d307ca884978?w=1600&h=900&fit=crop',
+  },
+];
 
 export default function HeroSection() {
-  const [currentTextIndex, setCurrentTextIndex] = useState(0);
-  const [animate, setAnimate] = useState(false);
-  const [loaded, setLoaded] = useState(false);
+  // Estado para controlar qué item está seleccionado
+  const [selectedIndex, setSelectedIndex] = useState(0);
 
-  const rotatingTexts = [
-    "Mantenimiento de reservorios de agua.",
-    "Desinfección de ambientes",
-    "Control de plagas",
-    "Limpieza y desinfección de reservorios de agua",
-    "Control aviar y animales menores",
-    "Consultoría en seguridad y medio ambiente",
-  ];
-
-  const [pausedLeft, setPausedLeft] = useState(false);
-  const [pausedRight, setPausedRight] = useState(false);
-
-  // 👉 Aquí definimos handleNav
-  const handleNav = (
-    e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
-    id: string
-  ) => {
-    e.preventDefault();
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
-  useEffect(() => {
-    setTimeout(() => setLoaded(true), 100);
-
-    const interval = setInterval(() => {
-      setAnimate(true);
-      setTimeout(() => {
-        setCurrentTextIndex((prev) => (prev + 1) % rotatingTexts.length);
-        setAnimate(false);
-      }, 400);
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, []);
+  // Item actual que se muestra
+  const currentItem = galleryItems[selectedIndex];
 
   return (
-    <section className="py-14 px-6 bg-gray-50 overflow-hidden">
-      <div
-        className={`max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center transform transition-all duration-1000 ease-out
-        ${loaded ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"}`}
-      >
-        {/* ─────────── Texto ─────────── */}
-        <div className="pr-4">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6 leading-snug">
-            Tu aliado en <br />
-            <span
-              className={`text-green-600 inline-block transition-all duration-500 ease-in-out
-              ${
-                animate
-                  ? "opacity-0 translate-y-3"
-                  : "opacity-100 translate-y-0"
-              }`}
-            >
-              {rotatingTexts[currentTextIndex]}
-            </span>
-          </h1>
-          <p className="text-lg sm:text-xl lg:text-2xl text-gray-600 mb-8 max-w-2xl">
-            Ofrecemos servicios especializados en Ingeniería, saneamiento
-            ambiental y gestión en medio ambiente con el soporte de un grupo
-            humano altamente especializado. Con altos estándares de calidad,
-            manteniendo la satisfacción de nuestros clientes, la salud y
-            seguridad de nuestros trabajadores y el cuidado del medio ambiente.
-          </p>
-          <Button
-            asChild
-            onClick={(e) => handleNav(e, "BlogSection")}
-            className="bg-green-600 text-white hover:bg-green-700 
-             text-lg sm:text-xl lg:text-2xl 
-             px-7 sm:px-9 lg:px-12 
-             py-3 sm:py-4 lg:py-5 
-             rounded-2xl shadow-lg 
-             transition hover:shadow-green-400/50"
-          >
-            <Link href="#BlogSection">Ver Servicios</Link>
-          </Button>
-        </div>
+    <section className="relative w-full h-screen md:h-[500px] lg:h-[700px] overflow-hidden bg-gray-700">
+      
+      {/* IMAGEN DE FONDO */}
+      <div className="absolute inset-0">
+        <img
+          src={currentItem.mainImage}
+          alt={currentItem.title}
+          className="w-full h-full object-cover transition-all duration-500 ease-in-out"
+        />
 
-        {/* ─────────── Carrusel ─────────── */}
-        <div className="relative h-64 sm:h-80 md:h-96 lg:h-[28rem] overflow-hidden">
-          {/* Neblina arriba y abajo */}
-          <div className="absolute top-0 left-0 w-full h-14 bg-gradient-to-b from-gray-50 to-transparent z-20 pointer-events-none"></div>
-          <div className="absolute bottom-0 left-0 w-full h-14 bg-gradient-to-t from-gray-50 to-transparent z-20 pointer-events-none"></div>
+        {/* Capa oscura para mejorar la visibilidad del texto */}
+        <div className="absolute inset-0 bg-black/30" />
+      </div>
 
-          {/* Primera columna */}
-          <div
-            className="absolute left-0 w-1/2 pr-2"
-            onMouseEnter={() => setPausedLeft(true)}
-            onMouseLeave={() => setPausedLeft(false)}
-          >
-            <div className={`carousel-up ${pausedLeft ? "pause" : ""}`}>
-              <img
-                src="servicios/consultoria/1.jpeg"
-                alt="Bolsas plásticas blancas"
-                className="w-full h-28 sm:h-32 md:h-36 lg:h-40 object-cover rounded-lg mb-4 shadow-md"
-              />
-              <img
-                src="servicios/control/a.jpg"
-                alt="Contenedores verdes"
-                className="w-full h-28 sm:h-32 md:h-36 lg:h-40 object-cover rounded-lg mb-4 shadow-md"
-              />
-              <img
-                src="servicios/controla/a.jpeg"
-                alt="Bolsas plásticas blancas"
-                className="w-full h-28 sm:h-32 md:h-36 lg:h-40 object-cover rounded-lg mb-4 shadow-md"
-              />
-              <img
-                src="servicios/controlav/a.jpeg"
-                alt="Contenedores verdes"
-                className="w-full h-28 sm:h-32 md:h-36 lg:h-40 object-cover rounded-lg mb-4 shadow-md"
-              />
-              <img
-                src="servicios/desinfeccion/b.jpeg"
-                alt="Contenedores verdes"
-                className="w-full h-28 sm:h-32 md:h-36 lg:h-40 object-cover rounded-lg mb-4 shadow-md"
-              />
-              <img
-                src="servicios/limpieza/c.jpeg"
-                alt="Contenedores verdes"
-                className="w-full h-28 sm:h-32 md:h-36 lg:h-40 object-cover rounded-lg mb-4 shadow-md"
-              />
-              
-            </div>
-          </div>
+      {/* PANEL ROJO IZQUIERDO SUPERIOR (ángulo diagonal) */}
+      <div 
+        className="absolute inset-0 bg-red-700"
+        style={{
+          clipPath: 'polygon(0% 0%, 50% 0%, 35% 100%, 0% 100%)',
+        }}
+      />
 
-          {/* Segunda columna */}
-          <div
-            className="absolute right-0 w-1/2 pl-2"
-            onMouseEnter={() => setPausedRight(true)}
-            onMouseLeave={() => setPausedRight(false)}
-          >
-            <div className={`carousel-down ${pausedRight ? "pause" : ""}`}>
-              <img
-                src="servicios/mantenimiento/d.jpeg"
-                alt="Contenedores verdes"
-                className="w-full h-28 sm:h-32 md:h-36 lg:h-40 object-cover rounded-lg mb-4 shadow-md"
-              />
-              <img
-                src="servicios/limpieza/c.jpeg"
-                alt="Contenedores verdes"
-                className="w-full h-28 sm:h-32 md:h-36 lg:h-40 object-cover rounded-lg mb-4 shadow-md"
-              />
-              <img
-                src="servicios/desinfeccion/b.jpeg"
-                alt="Contenedores verdes"
-                className="w-full h-28 sm:h-32 md:h-36 lg:h-40 object-cover rounded-lg mb-4 shadow-md"
-              />
-              <img
-                src="servicios/controla/a.jpeg"
-                alt="Bolsas plásticas blancas"
-                className="w-full h-28 sm:h-32 md:h-36 lg:h-40 object-cover rounded-lg mb-4 shadow-md"
-              />
-              <img
-                src="servicios/controla/a.jpeg"
-                alt="Bolsas plásticas blancas"
-                className="w-full h-28 sm:h-32 md:h-36 lg:h-40 object-cover rounded-lg mb-4 shadow-md"
-              />
-            </div>
-          </div>
+      {/* PANEL ROJO IZQUIERDO INFERIOR (crea efecto tipo Z) */}
+      <div 
+        className="absolute inset-0 bg-red-700"
+        style={{
+          clipPath: 'polygon(0% 0%, 35% 0%, 50% 100%, 0% 100%)',
+        }}
+      />
+
+      {/* PANEL ROJO DERECHO SUPERIOR */}
+      <div 
+        className="absolute inset-0 bg-red-700"
+        style={{
+          clipPath: 'polygon(75% 0%, 100% 0%, 100% 100%, 80% 100%)',
+        }}
+      />
+
+      {/* PANEL ROJO DERECHO INFERIOR (completa el efecto Z en la imagen) */}
+      <div 
+        className="absolute inset-0 bg-red-700"
+        style={{
+          clipPath: 'polygon(75% 0%, 100% 0%, 100% 100%, 80% 100%)',
+        }}
+      />
+
+     {/* CONTENIDO DE TEXTO */}
+<div className="relative z-10 h-full flex flex-col justify-center pl-[10%] md:pl-[12%] lg:pl-[15%] max-w-xl">
+  
+  {/* TÍTULO */}
+  <h1 className="text-white text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4">
+    {currentItem.title}
+  </h1>
+  
+  {/* LÍNEA DECORATIVA */}
+  <div className="w-12 h-1 bg-gray-300 mb-6" />
+  
+  {/* DESCRIPCIÓN */}
+  <p className="text-white text-sm md:text-base leading-relaxed max-w-md">
+    {currentItem.description}
+  </p>
+</div>
+
+      {/* MENÚ DE NAVEGACIÓN INFERIOR */}
+      <div className="absolute bottom-0 left-0 right-0 z-20">
+        <div className="flex flex-wrap justify-start lg:justify-center px-4 md:px-6 lg:px-8 py-4 gap-2 md:gap-3">
+          
+        {galleryItems.map((item, index) => (
+  <button
+    key={item.id}
+    onClick={() => setSelectedIndex(index)}
+    className={`
+      px-6 py-4 text-sm font-semibold uppercase tracking-wide
+      backdrop-blur-md transition-all duration-300
+      ${
+        selectedIndex === index
+          ? 'bg-gray-200 text-black'
+          : 'bg-white/20 text-white hover:bg-white/40'
+      }
+    `}
+  >
+    <span className="flex items-center gap-2">
+      {item.title}
+      <span>›</span>
+    </span>
+  </button>
+))}
         </div>
       </div>
+
     </section>
   );
 }

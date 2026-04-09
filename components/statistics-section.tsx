@@ -1,190 +1,229 @@
-  "use client"
-  import { useState, useEffect, useRef } from "react"
-  import { Button } from "@/components/ui/button"
-  import { Play, Tent, X, Share2 } from "lucide-react"
+import { Users, Shield } from 'lucide-react';
+import Image from 'next/image';
 
-  export default function StatisticsSection() {
-    const [isVideoOpen, setIsVideoOpen] = useState(false)
-    const [showHeader, setShowHeader] = useState(false)
-    const [showVideo, setShowVideo] = useState(false)
-    const [showText, setShowText] = useState(false)
+const hexClip = "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)";
 
-    const sectionRef = useRef<HTMLDivElement | null>(null)
+const HEX_W = 130;
+const HEX_H = 150;
 
-    useEffect(() => {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              // Reinicia los estados cada vez que entra en pantalla
-              setShowHeader(false)
-              setShowVideo(false)
-              setShowText(false)
+interface HexItem {
+  img?: string;
+  isCenter?: boolean;
+  top: number;
+  left: number;
+}
 
-              setTimeout(() => setShowHeader(true), 200)
-              setTimeout(() => setShowVideo(true), 600)
-              setTimeout(() => setShowText(true), 1000)
-            }
-          })
-        },
-        { threshold: 0.3 } // 👈 aparece cuando el 30% de la sección es visible
-      )
+const hexItems: HexItem[] = [
+  {
+    top: 0,
+    left: 95,
+    img: "https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=300",
+  },
+  {
+    top: 0,
+    left: 225,
+    img: "https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg?auto=compress&cs=tinysrgb&w=300",
+  },
+  {
+    top: 115,
+    left: 30,
+    img: "https://images.pexels.com/photos/2062316/pexels-photo-2062316.jpeg?auto=compress&cs=tinysrgb&w=300",
+  },
+  {
+    top: 115,
+    left: 160,
+    isCenter: true,
+  },
+  {
+    top: 115,
+    left: 290,
+    img: "https://images.pexels.com/photos/6129507/pexels-photo-6129507.jpeg?auto=compress&cs=tinysrgb&w=300",
+  },
+  {
+    top: 230,
+    left: 95,
+    img: "https://images.pexels.com/photos/3867349/pexels-photo-3867349.jpeg?auto=compress&cs=tinysrgb&w=300",
+  },
+  {
+    top: 230,
+    left: 225,
+    img: "https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=300",
+  },
+];
 
-      if (sectionRef.current) observer.observe(sectionRef.current)
-      return () => {
-        if (sectionRef.current) observer.unobserve(sectionRef.current)
-      }
-    }, [])
+export default function StatisticsSection() {
+  return (
+    <section className="py-20 bg-white">
+      <div className="max-w-6xl mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center gap-16">
+        <div
+          className="relative flex-shrink-0"
+          style={{ width: 420, height: 380 }}
+        >
+          {hexItems.map((hex, i) => (
+            <div
+              key={i}
+              className="absolute overflow-hidden"
+              style={{
+                width: HEX_W,
+                height: HEX_H,
+                top: hex.top,
+                left: hex.left,
+                clipPath: hexClip,
+                background: hex.isCenter ? "#1a1a2e" : undefined,
+              }}
+            >
+              {hex.img && (
+                <img
+                  src={hex.img}
+                  alt=""
+                  className="w-full h-full object-cover"
+                />
+              )}
+              {hex.isCenter && (
+                <div className="w-full h-full flex flex-col items-center justify-center bg-gray-900">
+                  <span
+                    className="font-black text-white leading-none"
+                    style={{ fontSize: 48 }}
+                  >
+                    +32
+                  </span>
+                  <span
+                    className="font-black text-white tracking-widest uppercase"
+                    style={{ fontSize: 18 }}
+                  >
+                    AÑOS
+                  </span>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
 
-    const handleOverlayClick = (e: React.MouseEvent) => {
-      if (e.target === e.currentTarget) setIsVideoOpen(false)
-    }
+        <div className="flex-1 max-w-xl">
+          <p className="text-red-600 font-bold text-sm uppercase tracking-widest mb-3"></p>
 
-    return (
-      <section ref={sectionRef} className="py-16 px-4 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto">
-          {/* Header Section */}
-          <div
-            className={`text-center mb-16 transform transition-all duration-1000 ease-out
-              ${showHeader ? "translate-y-0 opacity-100" : "-translate-y-10 opacity-0"}`}
-          >
-            <span className="text-green-600 font-semibold uppercase tracking-wide">CALIDAD</span>
-            <h2 className="text-4xl font-extrabold text-gray-900 mt-2">
-              Números que hablan por nosotros
-            </h2>
-            <p className="text-gray-600 mt-3 max-w-2xl mx-auto">
-              Más de dos décadas de experiencia nos respaldan como líderes en la industria.
+          <h2 className="text-4xl font-black text-gray-900 leading-tight mb-6">
+            Misión y Visión
+          </h2>
+
+          <div className="space-y-4 text-gray-700 leading-relaxed text-base">
+            <p>
+              <span className="font-semibold text-gray-900">Misión:</span> Dar
+              soluciones eficientes a nuestros socios, asegurando la calidad y
+              satisfacción en la prestación de nuestros servicios.
+            </p>
+
+            <p>
+              <span className="font-semibold text-gray-900">Visión:</span> Ser
+              reconocidos a nivel nacional como una empresa líder en la
+              prestación de servicios en ingeniería, saneamiento ambiental y
+              gestión en medio ambiente.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className="max-w-7xl mx-auto mt-30">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl sm:text-5xl font-bold text-black mb-4 text-balance">
+            NUESTRA EXPERIENCIA
+          </h2>
+          <p className="text-lg sm:text-xl text-black font-semibold">
+            Nuestra manera de hacer las cosas
+          </p>
+        </div>
+
+        {/* Content Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+          {/* Confianza Card */}
+          <div className="border-2 border-white/30 rounded-lg p-8 text-center backdrop-blur-sm hover:border-white/50 transition-colors">
+            <div className="flex justify-center mb-6">
+              <div className="bg-black/20 p-4 rounded-full">
+                <Shield className="w-8 h-8 text-white" />
+              </div>
+            </div>
+            <h3 className="text-2xl font-bold text-black  mb-4">Confianza</h3>
+            <p className="text-black/90 leading-relaxed text-sm sm:text-base">
+              Nos encargamos de todo para que el área de MIP pueda concentrarse
+              en sus tareas, sin preocuparse por la gestión de su proveedor.
             </p>
           </div>
 
-          {/* Video + Content */}
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Video Section */}
-            <div
-              className={`relative mx-auto w-full max-w-md rounded-lg overflow-hidden shadow-xl transform transition-all duration-1000 ease-out
-                ${showVideo ? "scale-100 opacity-100" : "scale-90 opacity-0"}`}
-            >
-              <img
-                src="/plastigesa-mixtura-fair.png"
-                alt="Plastigesa en Feria Mixtura"
-                className="w-full h-auto rounded-lg"
+          {/* Eagle Image */}
+          <div className="flex justify-center md:scale-110">
+            <div className="relative w-full h-80 sm:h-96">
+              <Image
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-PLAwikBP6ZcPmUQq9ayn2yPhoymJGg.png"
+                alt="Águila en vuelo"
+                fill
+                className="object-cover rounded-lg"
+                priority
               />
-              {/* Overlay Play Button */}
-              <div className="absolute inset-0 flex items-center justify-center bg-black/30">
-                <Button
-                  size="lg"
-                  onClick={() => setIsVideoOpen(true)}
-                  className="rounded-full bg-white text-black hover:bg-gray-100 shadow-lg w-16 h-16 flex items-center justify-center transition-transform transform hover:scale-110"
-                >
-                  <Play className="w-8 h-8 ml-1" />
-                </Button>
+            </div>
+          </div>
+
+          {/* Compromiso Card */}
+          <div className="border-2 border-white/30 rounded-lg p-8 text-center backdrop-blur-sm hover:border-white/50 transition-colors">
+            <div className="flex justify-center mb-6">
+              <div className="bg-black/20 p-4 rounded-full">
+                <Users className="w-8 h-8 text-black " />
               </div>
             </div>
-
-            {/* Content Section */}
-            <div
-              className={`transform transition-all duration-1000 ease-out delay-500
-                ${showText ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"}`}
-            >
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 flex items-center">
-                <Tent className="w-7 h-7 text-red-600 mr-2" />
-                PLASTIGESA en la Feria Mixtura Yanahuara 2025
-              </h3>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                PLASTIGESA tuvo el honor de participar en la Feria Gastronómica Mixtura Yanahuara 2025,
-                uno de los eventos más importantes y concurridos de Arequipa. Nuestro stand recibió a cientos
-                de emprendedores, empresarios y familias, quienes conocieron de cerca nuestros productos
-                de embalaje y soluciones sostenibles para el comercio y la industria.
-              </p>
-              <p className="text-gray-600 leading-relaxed">
-                Seguimos comprometidos con el desarrollo regional y con estar presentes en los espacios
-                que impulsan la innovación, el emprendimiento y el orgullo por lo peruano. ¡Gracias a todos por visitarnos!
-              </p>
-            </div>
+            <h3 className="text-2xl font-bold text-black mb-4">Compromiso</h3>
+            <p className="text-black/90 leading-relaxed text-sm sm:text-base">
+              Nuestros trabajadores se identifican plenamente con cada cliente,
+              dedicándose en todo momento a garantizar su satisfacción y
+              ofreciendo lo mejor de sí mismos.
+            </p>
           </div>
         </div>
 
-        {/* 🎬 Modal Video */}
-        {isVideoOpen && (
-          <div
-            className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4 animate-fadeIn"
-            onClick={handleOverlayClick}
-          >
-            <div className="bg-white rounded-2xl w-full max-w-4xl mx-auto overflow-hidden shadow-2xl transform scale-95 opacity-0 animate-zoomIn">
-              {/* Header */}
-              <div className="flex items-center justify-between p-4 bg-gradient-to-r from-green-600 to-green-700 text-white">
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
-                    <Play className="w-4 h-4" />
-                  </div>
-                  <h3 className="font-semibold text-lg">PLASTIGESA EN MIXTURA 2025</h3>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    className="text-white hover:bg-white hover:bg-opacity-20 text-sm"
-                  >
-                    <Share2 className="w-4 h-4 mr-1" />
-                    Compartir
-                  </Button>
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    onClick={() => setIsVideoOpen(false)}
-                    className="text-white hover:bg-white hover:bg-opacity-20 rounded-full w-8 h-8 p-0"
-                  >
-                    <X className="w-4 h-4" />
-                  </Button>
-                </div>
-              </div>
-
-              {/* Video */}
-              <div className="relative aspect-video bg-black">
-                <iframe
-                  src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&rel=0&modestbranding=1"
-                  title="PLASTIGESA EN MIXTURA 2025"
-                  className="w-full h-full"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              </div>
-
-              {/* Footer */}
-              <div className="p-4 bg-gray-50 flex items-center justify-between">
-                <a
-                  href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-800 transition-colors"
-                >
-                  <div className="w-5 h-5 bg-red-600 rounded flex items-center justify-center">
-                    <Play className="w-3 h-3 text-white fill-white" />
-                  </div>
-                  Mirar en YouTube
-                </a>
+        {/* Content Grid */}
+        <div className=" mt-30 grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+          {/* Confianza Card */}
+          <div className="border-2 border-white/30 rounded-lg p-8 text-center backdrop-blur-sm hover:border-white/50 transition-colors">
+            <div className="flex justify-center mb-6">
+              <div className="bg-black/20 p-4 rounded-full">
+                <Shield className="w-8 h-8 text-white" />
               </div>
             </div>
+            <h3 className="text-2xl font-bold text-black  mb-4">Confianza</h3>
+            <p className="text-black/90 leading-relaxed text-sm sm:text-base">
+              Nos encargamos de todo para que el área de MIP pueda concentrarse
+              en sus tareas, sin preocuparse por la gestión de su proveedor.
+            </p>
           </div>
-        )}
 
-        {/* Animaciones personalizadas */}
-        <style jsx>{`
-          .animate-fadeIn {
-            animation: fadeIn 0.6s ease-out forwards;
-          }
-          .animate-zoomIn {
-            animation: zoomIn 0.5s ease-out forwards;
-          }
-          @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-          }
-          @keyframes zoomIn {
-            from { transform: scale(0.9); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-          }
-        `}</style>
-      </section>
-    )
-  }
+          {/* Eagle Image */}
+          <div className="flex justify-center md:scale-110">
+            <div className="relative w-full h-80 sm:h-96">
+              <Image
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-PLAwikBP6ZcPmUQq9ayn2yPhoymJGg.png"
+                alt="Águila en vuelo"
+                fill
+                className="object-cover rounded-lg"
+                priority
+              />
+            </div>
+          </div>
+
+          {/* Compromiso Card */}
+          <div className="border-2 border-white/30 rounded-lg p-8 text-center backdrop-blur-sm hover:border-white/50 transition-colors">
+            <div className="flex justify-center mb-6">
+              <div className="bg-black/20 p-4 rounded-full">
+                <Users className="w-8 h-8 text-black " />
+              </div>
+            </div>
+            <h3 className="text-2xl font-bold text-black mb-4">Compromiso</h3>
+            <p className="text-black/90 leading-relaxed text-sm sm:text-base">
+              Nuestros trabajadores se identifican plenamente con cada cliente,
+              dedicándose en todo momento a garantizar su satisfacción y
+              ofreciendo lo mejor de sí mismos.
+            </p>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+  );
+}
