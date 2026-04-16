@@ -64,9 +64,7 @@ export default function PlastigesaPage() {
         <ContactSection />
       </section>
 
-      <section id="Footer" className="scroll-mt-24">
-        <Footer />
-      </section>
+      
     </div>
   );
 }
