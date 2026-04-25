@@ -98,10 +98,10 @@ export default function Header() {
             </Link>
 
             <Link
-              href="/sectores"
+              href="/biblioteca"
               className="px-4 py-2 hover:bg-gray-400 font-semibold text-xs lg:text-sm transition uppercase rounded"
             >
-              SOLUCIONES
+              BIBLIOTECA Y EQUIPOS
             </Link>
 
             <Link
@@ -155,7 +155,7 @@ export default function Header() {
               onClick={() => setIsMobileMenuOpen(false)}
               className="px-4 py-2 hover:bg-gray-500 font-semibold text-sm rounded uppercase"
             >
-              SOLUCIONES
+              BIBLIOTECA Y EQUIPOS
             </Link>
 
             <Link
