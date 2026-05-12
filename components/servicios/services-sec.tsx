@@ -1,13 +1,22 @@
 'use client';
 
 import { useState } from 'react';
-import { ChevronDown, Shield, Bug, Droplets, Bird, Zap, CheckCircle2 } from 'lucide-react';
+import {
+  Shield,
+  Bug,
+  Droplets,
+  Bird,
+  Zap,
+  CheckCircle2,
+} from 'lucide-react';
 import { Card } from '@/components/ui/card';
+import Image from 'next/image';
 
 interface ServiceCategory {
   id: string;
   title: string;
   icon: React.ReactNode;
+  image: string; // 👈 NUEVO CAMPO
   description: string;
   sections: {
     title: string;
@@ -20,6 +29,8 @@ const services: ServiceCategory[] = [
     id: 'desinsectacion',
     title: 'Desinsectación',
     icon: <Bug className="w-6 h-6" />,
+image:
+      'https://images.pexels.com/photos/4099467/pexels-photo-4099467.jpeg',
     description: 'Técnicas especializadas para controlar y eliminar insectos y arácnidos',
     sections: [
       {
@@ -59,6 +70,8 @@ const services: ServiceCategory[] = [
     id: 'desinfeccion',
     title: 'Desinfección',
     icon: <Shield className="w-6 h-6" />,
+    image:
+      'https://images.pexels.com/photos/4099467/pexels-photo-4099467.jpeg',
     description: 'Eliminación e inactivación de microorganismos patógenos',
     sections: [
       {
@@ -99,6 +112,8 @@ const services: ServiceCategory[] = [
     id: 'desratizacion',
     title: 'Desratización',
     icon: <Bug className="w-6 h-6" />,
+    image:
+      'https://images.pexels.com/photos/4099467/pexels-photo-4099467.jpeg',
     description: 'Control integral de ratas y ratones en ambientes urbanos',
     sections: [
       {
@@ -129,6 +144,8 @@ const services: ServiceCategory[] = [
     id: 'reservorios',
     title: 'Limpieza de Reservorios',
     icon: <Droplets className="w-6 h-6" />,
+    image:
+      'https://images.pexels.com/photos/4099467/pexels-photo-4099467.jpeg',
     description: 'Garantizamos condiciones adecuadas para el almacenamiento de agua',
     sections: [
       {
@@ -164,6 +181,8 @@ const services: ServiceCategory[] = [
     id: 'control-aviar',
     title: 'Control Aviar',
     icon: <Bird className="w-6 h-6" />,
+    image:
+      'https://images.pexels.com/photos/4099467/pexels-photo-4099467.jpeg',
     description: 'Manejo especializado de aves plaga como palomas y gaviotas',
     sections: [
       {
@@ -194,6 +213,8 @@ const services: ServiceCategory[] = [
     id: 'servicios-electricos',
     title: 'Servicios Eléctricos',
     icon: <Zap className="w-6 h-6" />,
+    image:
+      'https://images.pexels.com/photos/4099467/pexels-photo-4099467.jpeg',
     description: 'Garantizar la seguridad, continuidad y eficiencia de sistemas eléctricos',
     sections: [
       {
@@ -231,6 +252,8 @@ const services: ServiceCategory[] = [
     id: 'consultoria',
     title: 'Consultoría Ambiental',
     icon: <Shield className="w-6 h-6" />,
+    image:
+      'https://images.pexels.com/photos/4099467/pexels-photo-4099467.jpeg',
     description: 'Cumplimiento normativo y gestión ambiental especializada',
     sections: [
       {
@@ -275,7 +298,13 @@ const services: ServiceCategory[] = [
 ];
 
 export function ServicesSec() {
-  const [expandedService, setExpandedService] = useState<string | null>(services[0].id);
+  const [expandedService, setExpandedService] = useState<string | null>(
+    services[0].id
+  );
+
+  const selectedService = services.find(
+    (s) => s.id === expandedService
+  );
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-background via-background to-muted py-12 px-4 sm:px-6 lg:px-8">
@@ -285,95 +314,138 @@ export function ServicesSec() {
           <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">
             Servicios Profesionales
           </h1>
+
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Soluciones integrales de control de plagas, desinfección y servicios especializados para
-            proteger su salud y ambiente
+            Soluciones integrales de control de plagas,
+            desinfección y servicios especializados
           </p>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {/* Service List Sidebar */}
+        {/* GRID */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          {/* IZQUIERDA */}
           <div className="space-y-4">
-            <h2 className="text-2xl font-bold text-foreground mb-6">Nuestros Servicios</h2>
+            <h2 className="text-2xl font-bold text-foreground mb-6">
+              Nuestros Servicios
+            </h2>
+
             <div className="space-y-2">
               {services.map((service) => (
                 <button
                   key={service.id}
                   onClick={() => setExpandedService(service.id)}
-                  className={`w-full text-left p-4 rounded-lg transition-all duration-200 flex items-start gap-3 ${
+                  className={`w-full text-left p-4 rounded-2xl transition-all duration-300 flex items-start gap-3 ${
                     expandedService === service.id
-                      ? 'bg-primary text-primary-foreground shadow-lg'
+                      ? 'bg-primary text-primary-foreground shadow-2xl scale-[1.02]'
                       : 'bg-card text-card-foreground hover:bg-muted'
                   }`}
                 >
                   <div className="mt-1">{service.icon}</div>
+
                   <div>
-                    <div className="font-semibold">{service.title}</div>
-                    <div className="text-sm opacity-90">{service.description}</div>
+                    <div className="font-semibold">
+                      {service.title}
+                    </div>
+
+                    <div className="text-sm opacity-90">
+                      {service.description}
+                    </div>
                   </div>
                 </button>
               ))}
             </div>
           </div>
 
+          {/* CENTRO - IMAGEN */}
+          <div className="relative h-[500px] lg:h-auto min-h-[500px] rounded-3xl overflow-hidden shadow-2xl">
+            {selectedService && (
+              <>
+                <Image
+                  src={selectedService.image}
+                  alt={selectedService.title}
+                  fill
+                  className="object-cover transition-all duration-500"
+                />
 
+                <div className="absolute inset-0 bg-black/45" />
 
-          {/* Service Details */}
+                <div className="absolute bottom-0 left-0 p-8 text-white">
+                  <div className="mb-4">
+                    {selectedService.icon}
+                  </div>
+
+                  <h2 className="text-4xl font-black mb-3">
+                    {selectedService.title}
+                  </h2>
+
+                  <p className="text-white/90 leading-relaxed">
+                    {selectedService.description}
+                  </p>
+                </div>
+              </>
+            )}
+          </div>
+
+          {/* DERECHA */}
           <div>
-            {expandedService && (
-              <Card className="p-6 sticky top-6">
-                {services.find((s) => s.id === expandedService) && (
-                  <div className="space-y-6">
-                    <h2 className="text-3xl font-bold text-foreground">
-                      {services.find((s) => s.id === expandedService)?.title}
-                    </h2>
+            {selectedService && (
+              <Card className="p-6 sticky top-6 rounded-3xl shadow-xl border-0">
+                <div className="space-y-6">
+                  <h2 className="text-3xl font-bold text-foreground">
+                    {selectedService.title}
+                  </h2>
 
-                    {services
-                      .find((s) => s.id === expandedService)
-                      ?.sections.map((section, idx) => (
-                        <div key={idx} className="space-y-2">
-                          <h3 className="text-lg font-semibold text-primary">
-                            {section.title}
-                          </h3>
-                          {typeof section.content === 'string' ? (
-                            <p className="text-muted-foreground leading-relaxed">
-                              {section.content}
-                            </p>
-                          ) : (
-                            <ul className="space-y-2">
-                              {section.content.map((item, itemIdx) => (
+                  {selectedService.sections.map(
+                    (section, idx) => (
+                      <div key={idx} className="space-y-3">
+                        <h3 className="text-lg font-bold text-primary">
+                          {section.title}
+                        </h3>
+
+                        {typeof section.content === 'string' ? (
+                          <p className="text-muted-foreground leading-relaxed">
+                            {section.content}
+                          </p>
+                        ) : (
+                          <ul className="space-y-3">
+                            {section.content.map(
+                              (item, itemIdx) => (
                                 <li
                                   key={itemIdx}
                                   className="flex items-start gap-3 text-muted-foreground"
                                 >
                                   <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+
                                   <span>{item}</span>
                                 </li>
-                              ))}
-                            </ul>
-                          )}
-                        </div>
-                      ))}
+                              )
+                            )}
+                          </ul>
+                        )}
+                      </div>
+                    )
+                  )}
 
-                    <button className="w-full bg-primary text-primary-foreground py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity mt-8">
-                      Solicitar Información
-                    </button>
-                  </div>
-                )}
+                  <button className="w-full bg-primary text-primary-foreground py-3 rounded-xl font-semibold hover:opacity-90 transition-opacity mt-8">
+                    Solicitar Información
+                  </button>
+                </div>
               </Card>
             )}
           </div>
         </div>
 
-        {/* CTA Section */}
-        <div className="mt-16 bg-primary text-primary-foreground rounded-xl p-8 text-center">
-          <h2 className="text-3xl font-bold mb-4">¿Necesitas nuestros servicios?</h2>
+        {/* CTA */}
+        <div className="mt-16 bg-primary text-primary-foreground rounded-3xl p-8 text-center shadow-2xl">
+          <h2 className="text-3xl font-bold mb-4">
+            ¿Necesitas nuestros servicios?
+          </h2>
+
           <p className="text-lg opacity-90 mb-6 max-w-2xl mx-auto">
-            Contáctanos hoy para una evaluación gratuita y personalizada de tu sitio o
-            instalación.
+            Contáctanos hoy para una evaluación gratuita y personalizada.
           </p>
-          <button className="bg-primary-foreground text-primary px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity">
+
+          <button className="bg-primary-foreground text-primary px-8 py-3 rounded-xl font-semibold hover:opacity-90 transition-opacity">
             Contáctanos Ahora
           </button>
         </div>

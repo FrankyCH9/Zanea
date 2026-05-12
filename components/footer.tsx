@@ -25,10 +25,10 @@ export default function Footer() {
           <div className="flex flex-col items-center md:items-start">
             <div className="flex items-center gap-3">
               <Image
-                src="experiencia/logo.jpeg"
+                src="experiencia/logo.png"
                 alt="logo"
-                width={60}
-                height={60}
+                width={100}
+                height={100}
               />
               <div>
                 <h2 className="text-xl font-semibold leading-tight">

@@ -58,7 +58,7 @@ export default function Header() {
           {/* Logo */}
           <div className="flex items-center">
             <img
-              src="experiencia/logo.jpeg"
+              src="experiencia/logo.png"
               alt="Logo Plastigesa"
               className="h-14 w-auto"
             />
@@ -70,21 +70,17 @@ export default function Header() {
               href="/"
               onClick={() => setActivo("inicio")}
               className={`px-4 py-2 font-semibold text-xs lg:text-sm uppercase rounded transition ${
-                activo === "inicio"
-                  ? "bg-gray-400"
-                  : "hover:bg-gray-400"
+                activo === "inicio" ? "bg-gray-400" : "hover:bg-gray-400"
               }`}
             >
               INICIO
             </Link>
 
             <Link
-              href="/nosotros"
+              href="#nosotros"
               onClick={() => setActivo("nosotros")}
               className={`px-4 py-2 font-semibold text-xs lg:text-sm uppercase rounded transition ${
-                activo === "nosotros"
-                  ? "bg-gray-400"
-                  : "hover:bg-gray-400"
+                activo === "nosotros" ? "bg-gray-400" : "hover:bg-gray-400"
               }`}
             >
               NOSOTROS

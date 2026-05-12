@@ -136,7 +136,7 @@ export default function ControlAmbiental() {
                     className="font-black text-white leading-none"
                     style={{ fontSize: 48 }}
                   >
-                    +32
+                    +7
                   </span>
                   <span
                     className="font-black text-white tracking-widest uppercase"

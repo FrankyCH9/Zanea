@@ -1,5 +1,5 @@
-"use client"
-import { useEffect, useRef, useState } from "react"
+"use client";
+import { useEffect, useRef, useState } from "react";
 
 const logos = [
   "marcas/1.png",
@@ -20,26 +20,26 @@ const logos = [
   "marcas/16.png",
   "marcas/17.png",
   "marcas/18.png",
-]
+];
 
 export default function ClientLogosSection() {
-  const sectionRef = useRef<HTMLDivElement | null>(null)
-  const [isVisible, setIsVisible] = useState(false)
+  const sectionRef = useRef<HTMLDivElement | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setIsVisible(true)
-            observer.disconnect()
+            setIsVisible(true);
+            observer.disconnect();
           }
-        })
+        });
       },
-      { threshold: 0.2 }
-    )
-    if (sectionRef.current) observer.observe(sectionRef.current)
-  }, [])
+      { threshold: 0.2 },
+    );
+    if (sectionRef.current) observer.observe(sectionRef.current);
+  }, []);
 
   return (
     <>
@@ -81,28 +81,24 @@ export default function ClientLogosSection() {
       >
         <div className="max-w-6xl mx-auto text-center">
           <span className="text-green-600 font-medium tracking-wide uppercase">
-            EXPERIENCIA
+            
           </span>
           <h2 className="text-4xl font-extrabold text-gray-900 mb-4">
-            Ellos confían en nuestro trabajo
+            
           </h2>
-          <p className="text-lg text-gray-600 mb-12">
-            Empresas líderes en diferentes industrias han elegido Plastigesa como
-            su proveedor de confianza.
-          </p>
 
           {/* Fila 1 (izquierda) */}
           <div className="relative flex overflow-hidden mb-10">
-            <div className="flex scroll-left gap-16 items-center min-w-max">
+            <div className="flex scroll-left gap-24 items-center min-w-max">
               {logos.concat(logos).map((logo, i) => (
                 <div
                   key={`row1-${i}`}
-                  className="w-32 h-20 flex items-center justify-center"
+                  className="w-52 h-32 flex items-center justify-center bg-white rounded-xl"
                 >
                   <img
                     src={logo}
                     alt={`Cliente ${i + 1}`}
-                    className="max-w-full max-h-full object-contain transition-transform duration-300 hover:scale-110"
+                    className="w-full h-full object-contain p-3 transition-transform duration-300 hover:scale-110"
                   />
                 </div>
               ))}
@@ -111,16 +107,16 @@ export default function ClientLogosSection() {
 
           {/* Fila 2 (derecha) */}
           <div className="relative flex overflow-hidden">
-            <div className="flex scroll-right gap-16 items-center min-w-max">
+            <div className="flex scroll-right gap-24 items-center min-w-max">
               {logos.concat(logos).map((logo, i) => (
                 <div
                   key={`row2-${i}`}
-                  className="w-32 h-20 flex items-center justify-center"
+                  className="w-52 h-32 flex items-center justify-center bg-white rounded-xl"
                 >
                   <img
                     src={logo}
                     alt={`Cliente ${i + 1}`}
-                    className="max-w-full max-h-full object-contain transition-transform duration-300 hover:scale-110"
+                    className="w-full h-full object-contain p-3 transition-transform duration-300 hover:scale-110"
                   />
                 </div>
               ))}
@@ -129,5 +125,5 @@ export default function ClientLogosSection() {
         </div>
       </section>
     </>
-  )
+  );
 }
