@@ -94,14 +94,14 @@ export default function HeroSection() {
 
       {/* EFECTO ROJO */}
       <div
-        className="absolute inset-0 bg-red-700/90 hidden md:block"
+        className="absolute inset-0 bg-[#1E293B]/90 hidden md:block"
         style={{
           clipPath: 'polygon(0% 0%, 45% 0%, 32% 100%, 0% 100%)',
         }}
       />
 
       <div
-        className="absolute inset-0 bg-red-800/90 hidden md:block"
+        className="absolute inset-0 bg-[#1E293B]/90 hidden md:block"
         style={{
           clipPath: 'polygon(0% 0%, 30% 0%, 45% 100%, 0% 100%)',
         }}

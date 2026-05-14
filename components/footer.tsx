@@ -14,7 +14,7 @@ export default function Footer() {
           fill
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-[#0B0F14]/90" />
+        <div className="absolute inset-0 bg-[#111827]" />
       </div>
 
       {/* Contenido */}
@@ -27,8 +27,8 @@ export default function Footer() {
               <Image
                 src="experiencia/logo.png"
                 alt="logo"
-                width={100}
-                height={100}
+                width={140}
+                height={140}
               />
               <div>
                 <h2 className="text-xl font-semibold leading-tight">

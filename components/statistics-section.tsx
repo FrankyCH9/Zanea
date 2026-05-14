@@ -102,7 +102,7 @@ export default function StatisticsSection() {
         <div className="flex-1 max-w-xl">
           <p className="text-red-600 font-bold text-sm uppercase tracking-widest mb-3"></p>
 
-          <h2 className="text-4xl font-black text-gray-900 leading-tight mb-6">
+          <h2 className="text-4xl font-black text-[#111827] leading-tight mb-6">
             Misión y Visión
           </h2>
 

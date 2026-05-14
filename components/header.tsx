@@ -20,7 +20,7 @@ export default function Header() {
   return (
     <header className="relative z-50">
       {/* Top Contact Bar */}
-      <div className="bg-gray-500 text-white text-xs md:text-sm py-3 px-4">
+      <div className="bg-[#111827] text-white text-xs md:text-sm py-3 px-4">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-3 md:gap-0">
           <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-center">
             <a
@@ -53,14 +53,14 @@ export default function Header() {
       </div>
 
       {/* Main Header */}
-      <div className="bg-gray-500 text-white">
+      <div className="bg-[#111827] text-white">
         <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
             <img
               src="experiencia/logo.png"
               alt="Logo Plastigesa"
-              className="h-14 w-auto"
+              className="h-16 w-auto"
             />
           </div>
 
