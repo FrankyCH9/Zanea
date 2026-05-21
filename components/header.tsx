@@ -9,6 +9,7 @@ import {
   Facebook,
   Youtube,
   Linkedin,
+  Instagram,
 } from "lucide-react";
 
 export default function Header() {
@@ -35,15 +36,15 @@ export default function Header() {
               className="flex items-center gap-2 hover:text-gray-300 transition"
             >
               <Mail size={16} />
-              <span>INFORMES@CONTROLAMBIENTAL.PE</span>
+              <span>comercial@saneagroupperu.com</span>
             </a>
           </div>
           <div className="flex gap-4">
-            <a href="#" className="hover:text-gray-300 transition">
+            <a href="https://www.facebook.com/saneagroup?locale=es_LA" className="hover:text-gray-300 transition">
               <Facebook size={18} />
             </a>
-            <a href="#" className="hover:text-gray-300 transition">
-              <Youtube size={18} />
+            <a href="https://www.instagram.com/sanea_group/" className="hover:text-gray-300 transition">
+              <Instagram size={18} />
             </a>
             <a href="#" className="hover:text-gray-300 transition">
               <Linkedin size={18} />
@@ -58,9 +59,9 @@ export default function Header() {
           {/* Logo */}
           <div className="flex items-center">
             <img
-              src="experiencia/logo.png"
+              src="experiencia/1.png"
               alt="Logo Plastigesa"
-              className="h-16 w-auto"
+              className="h-20 w-auto"
             />
           </div>
 

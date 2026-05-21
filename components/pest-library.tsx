@@ -2,31 +2,34 @@
 
 export default function PestLibrary() {
   const pests = [
-    { name: 'CUCARACHAS', image: '/cucaracha.jpg' },
-    { name: 'MOSCAS', image: '/mosca.jpg' },
-    { name: 'MOSQUITOS', image: '/mosquito.jpg' },
-    { name: 'ARAÑAS', image: '/arana.jpg' },
-    { name: 'GARRAPATAS', image: '/garrapata.jpg' },
-    { name: 'PULGAS', image: '/pulga.jpg' },
-    { name: 'CHINCHES', image: '/chinche.jpg' },
-    { name: 'ROEDORES', image: '/roedor.jpg' },
+    { name: 'CUCARACHAS', image: 'plagas/cucaracha.png' },
+    { name: 'MOSCAS', image: 'plagas/moscas.png' },
+    { name: 'MOSQUITOS', image: 'plagas/mosquitos.png' },
+    { name: 'ARAÑAS', image: 'plagas/arana.png' },
+    { name: 'GARRAPATAS', image: 'plagas/garrapatas.png' },
+    { name: 'PULGAS', image: 'plagas/puga.png' },
+    { name: 'CHINCHES', image: 'plagas/chinches.png' },
+    { name: 'ROEDORES', image: 'plagas/raton.png' },
   ];
 
   const equipments = [
-    { name: 'EQUIPO 1', image: '/equipo1.png' },
-    { name: 'EQUIPO 2', image: '/equipo2.png' },
-    { name: 'EQUIPO 3', image: '/equipo3.png' },
-    { name: 'EQUIPO 4', image: '/equipo4.png' },
-    { name: 'EQUIPO 5', image: '/equipo5.png' },
-    { name: 'EQUIPO 6', image: '/equipo6.png' },
-    { name: 'EQUIPO 7', image: '/equipo7.png' },
-    { name: 'EQUIPO 8', image: '/equipo8.png' },
+    { name: 'ULV NEBULIZADOR', image: 'equipos/1.png' },
+    { name: 'ULV NEBULIZADOR DC 20', image: 'equipos/2.png' },
+    { name: 'MOTOFUMIGADORA', image: 'equipos/3.png' },
+    { name: 'TERMONEBULIZADOR', image: 'equipos/4.png' },
+    { name: 'MSA ALTAIR 5X BIG 4 LEL-02-CO-H2O DETECTOR MULTIGAS', image: 'equipos/5.png' },
+    { name: 'MEDIDOR DIGITAL DE CLORO LIBRE', image: 'equipos/6.png' },
+    { name: 'ELECTROBOMBA SUMERGIBLES', image: 'equipos/7.png' },
+    { name: 'MOCHILAS MANUAL SOLO 425', image: 'equipos/8.png' },
+    { name: 'MOCHILAS MOTOR SOLO 423', image: 'equipos/9.png' },
+    { name: 'CAJAS CEBADERO ', image: 'equipos/10.png' },
+    { name: 'INSECTOCAPTURADORES ', image: 'equipos/11.png' },
   ];
 
   return (
     <div className="min-h-screen bg-white">
       {/* ================= HEADER ================= */}
-      <div className="bg-[#FF3D52] text-white px-8 py-16">
+      <div className="bg-[#6CB519] text-white px-8 py-16">
         <div className="max-w-7xl mx-auto">
           <h1 className="text-5xl font-bold mb-4">
             BIBLIOTECA DE PLAGAS
@@ -42,7 +45,7 @@ export default function PestLibrary() {
       <div className="max-w-7xl mx-auto px-8 py-12">
         <div className="flex items-center justify-between mb-10">
           <div>
-            <p className="text-[#FF3D52] font-bold uppercase tracking-[0.2em] text-sm mb-2">
+            <p className="text-[#6CB519] font-bold uppercase tracking-[0.2em] text-sm mb-2">
               Catálogo
             </p>
 
@@ -51,7 +54,7 @@ export default function PestLibrary() {
             </h2>
           </div>
 
-          <div className="hidden md:block w-40 h-1 bg-[#FF3D52] rounded-full" />
+          <div className="hidden md:block w-40 h-1 bg-[#6CB519] rounded-full" />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -68,7 +71,7 @@ export default function PestLibrary() {
                 />
               </div>
 
-              <div className="w-14 h-1 bg-[#FF3D52] rounded-full mb-4 group-hover:w-24 transition-all duration-500" />
+              <div className="w-14 h-1 bg-[#6CB519] rounded-full mb-4 group-hover:w-24 transition-all duration-500" />
 
               <h3 className="text-center font-black text-gray-800 tracking-wide text-lg">
                 {pest.name}
@@ -79,7 +82,7 @@ export default function PestLibrary() {
       </div>
 
       {/* ================= EQUIPOS HEADER ================= */}
-      <div className="bg-[#1B1B1B] text-white px-8 py-16 mt-10">
+      <div className="bg-[#6CB519] text-white px-8 py-16 mt-10">
         <div className="max-w-7xl mx-auto">
           <h1 className="text-5xl font-bold mb-4">
             NUESTROS EQUIPOS
@@ -100,7 +103,7 @@ export default function PestLibrary() {
               className="group relative flex flex-col items-center justify-center p-8 border border-gray-200 rounded-3xl bg-white hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 overflow-hidden"
             >
               {/* Número */}
-              <div className="absolute top-4 left-4 w-12 h-12 rounded-full bg-[#FF3D52] text-white flex items-center justify-center font-black shadow-lg">
+              <div className="absolute top-4 left-4 w-12 h-12 rounded-full bg-[#6CB519] text-white flex items-center justify-center font-black shadow-lg">
                 {index + 1}
               </div>
 
@@ -113,7 +116,7 @@ export default function PestLibrary() {
                 />
               </div>
 
-              <div className="w-14 h-1 bg-[#FF3D52] rounded-full mb-4 group-hover:w-24 transition-all duration-500" />
+              <div className="w-14 h-1 bg-[#6CB519] rounded-full mb-4 group-hover:w-24 transition-all duration-500" />
 
               <h3 className="text-center font-black text-gray-800 tracking-wide text-lg">
                 {equipment.name}

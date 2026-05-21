@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import { Facebook, Linkedin, Youtube } from 'lucide-react';
+import Image from "next/image";
+import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -20,23 +20,23 @@ export default function Footer() {
       {/* Contenido */}
       <div className="relative z-10 max-w-7xl mx-auto px-8 py-16">
         <div className="grid md:grid-cols-3 gap-12 items-start">
-          
           {/* 🔹 IZQUIERDA - LOGO */}
           <div className="flex flex-col items-center md:items-start">
             <div className="flex items-center gap-3">
               <Image
-                src="experiencia/logo.png"
+                src="experiencia/1.png"
                 alt="logo"
-                width={140}
-                height={140}
+                width={180}
+                height={180}
               />
               <div>
-                <h2 className="text-xl font-semibold leading-tight">
-                  Gestión & <br /> Control Ambiental
+                {/* <h2 className="text-xl font-semibold leading-tight">
+                  SANEA<br /> GROUP
                 </h2>
                 <p className="text-xs text-gray-400 tracking-widest">
-                  SOLUCIONES A LAS PLAGAS
                 </p>
+                  */}
+                
               </div>
             </div>
           </div>
@@ -52,15 +52,9 @@ export default function Footer() {
             <p className="hover:text-gray-300 cursor-pointer">
               SOLUCIONES PARA DIFERENTES SECTORES
             </p>
-            <p className="text-gray-500">
-              TRABAJA CON NOSOTROS
-            </p>
-            <p className="text-gray-500">
-              LIBRO DE RECLAMACIONES
-            </p>
-            <p className="hover:text-gray-300 cursor-pointer">
-              CONTÁCTANOS
-            </p>
+            <p className="text-gray-500">TRABAJA CON NOSOTROS</p>
+            <p className="text-gray-500">LIBRO DE RECLAMACIONES</p>
+            <p className="hover:text-gray-300 cursor-pointer">CONTÁCTANOS</p>
           </div>
 
           {/* 🔹 DERECHA - CONTACTO */}
@@ -79,32 +73,47 @@ export default function Footer() {
 
             <div>
               <p className="font-semibold text-white">EMAIL:</p>
-              <p className="text-gray-400">
-                informes@controlambiental.pe
-              </p>
+              <p className="text-gray-400">comercial@saneagroupperu.com</p>
             </div>
 
             <div>
               <p className="font-semibold text-white">TELÉFONO:</p>
-              <p className="text-gray-400">
-                947 454 525
-              </p>
+              <p className="text-gray-400">998 998 318</p>
             </div>
 
             {/* 🔹 ICONOS */}
             <div className="flex justify-center md:justify-start gap-3 pt-2">
-              <div className="w-8 h-8 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition">
+              {/* FACEBOOK */}
+              <a
+                href="https://www.facebook.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-8 h-8 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition"
+              >
                 <Facebook size={16} />
-              </div>
-              <div className="w-8 h-8 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition">
-                <Youtube size={16} />
-              </div>
-              <div className="w-8 h-8 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition">
+              </a>
+
+              {/* INSTAGRAM */}
+              <a
+                href="https://www.instagram.com/sanea_group/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-8 h-8 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition"
+              >
+                <Instagram size={16} />
+              </a>
+
+              {/* LINKEDIN */}
+              <a
+                href="https://www.linkedin.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-8 h-8 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition"
+              >
                 <Linkedin size={16} />
-              </div>
+              </a>
             </div>
           </div>
-
         </div>
       </div>
     </footer>
