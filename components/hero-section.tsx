@@ -28,7 +28,7 @@ const galleryItems = [
   },
   {
     id: 4,
-    title: 'CONSULTOIRIA EN SEGURIDAD Y MEDIO AMBIENTE',
+    title: 'CONSULTORIA EN SEGURIDAD Y MEDIO AMBIENTE',
     description: 'Impulsamos la gestión segura y sostenible de su empresa mediante asesoría especializada y elaboración de estudios ambientales.',
     mainImage:
       'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1600&h=900&fit=crop',

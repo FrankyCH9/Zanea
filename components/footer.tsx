@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import Image from "next/image";
 import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
 
@@ -36,25 +37,46 @@ export default function Footer() {
                 <p className="text-xs text-gray-400 tracking-widest">
                 </p>
                   */}
-                
               </div>
             </div>
           </div>
-
           {/* 🔹 CENTRO - LINKS */}
           <div className="text-center md:text-left space-y-3 text-sm">
             <p className="uppercase tracking-wider text-white font-semibold">
               ACERCA DE NOSOTROS
             </p>
-            <p className="hover:text-gray-300 cursor-pointer">
-              NUESTROS SERVICIOS
-            </p>
-            <p className="hover:text-gray-300 cursor-pointer">
-              SOLUCIONES PARA DIFERENTES SECTORES
-            </p>
-            <p className="text-gray-500">TRABAJA CON NOSOTROS</p>
-            <p className="text-gray-500">LIBRO DE RECLAMACIONES</p>
-            <p className="hover:text-gray-300 cursor-pointer">CONTÁCTANOS</p>
+
+            <Link href="/" className="block hover:text-gray-300 transition">
+              INICIO
+            </Link>
+
+            <Link
+              href="#nosotros"
+              className="block hover:text-gray-300 transition"
+            >
+              NOSOTROS
+            </Link>
+
+            <Link
+              href="/servicios"
+              className="block hover:text-gray-300 transition"
+            >
+              SERVICIOS
+            </Link>
+
+            <Link
+              href="/biblioteca"
+              className="block hover:text-gray-300 transition"
+            >
+              BIBLIOTECA Y EQUIPOS
+            </Link>
+
+            <Link
+              href="/contacto"
+              className="block hover:text-gray-300 transition"
+            >
+              CONTÁCTANOS
+            </Link>
           </div>
 
           {/* 🔹 DERECHA - CONTACTO */}

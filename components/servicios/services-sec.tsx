@@ -305,151 +305,161 @@ export function ServicesSec() {
   const selectedService = services.find(
     (s) => s.id === expandedService
   );
+return (
+  <main className="min-h-screen bg-gradient-to-br from-[#0f172a] via-[#111827] to-[#1e293b] py-12 px-4 sm:px-6 lg:px-8">
+    <div className="max-w-7xl mx-auto">
 
-  return (
-    <main className="min-h-screen bg-gradient-to-br from-background via-background to-muted py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">
-            Servicios Profesionales
-          </h1>
+      {/* Header */}
+      <div className="text-center mb-12">
+        <h1 className="text-4xl sm:text-5xl font-black text-white mb-4">
+          Servicios Profesionales
+        </h1>
 
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Soluciones integrales de control de plagas,
-            desinfección y servicios especializados
-          </p>
-        </div>
+        <div className="w-32 h-1 bg-[#6CB519] mx-auto rounded-full mb-6" />
 
-        {/* GRID */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* IZQUIERDA */}
-          <div className="space-y-4">
-            <h2 className="text-2xl font-bold text-foreground mb-6">
-              Nuestros Servicios
-            </h2>
+        <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+          Soluciones integrales de control de plagas,
+          desinfección y servicios especializados
+        </p>
+      </div>
 
-            <div className="space-y-2">
-              {services.map((service) => (
-                <button
-                  key={service.id}
-                  onClick={() => setExpandedService(service.id)}
-                  className={`w-full text-left p-4 rounded-2xl transition-all duration-300 flex items-start gap-3 ${
-                    expandedService === service.id
-                      ? 'bg-primary text-primary-foreground shadow-2xl scale-[1.02]'
-                      : 'bg-card text-card-foreground hover:bg-muted'
-                  }`}
-                >
-                  <div className="mt-1">{service.icon}</div>
+      {/* GRID */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
-                  <div>
-                    <div className="font-semibold">
-                      {service.title}
-                    </div>
-
-                    <div className="text-sm opacity-90">
-                      {service.description}
-                    </div>
-                  </div>
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* CENTRO - IMAGEN */}
-          <div className="relative h-[500px] lg:h-auto min-h-[500px] rounded-3xl overflow-hidden shadow-2xl">
-            {selectedService && (
-              <>
-                <Image
-                  src={selectedService.image}
-                  alt={selectedService.title}
-                  fill
-                  className="object-cover transition-all duration-500"
-                />
-
-                <div className="absolute inset-0 bg-black/45" />
-
-                <div className="absolute bottom-0 left-0 p-8 text-white">
-                  <div className="mb-4">
-                    {selectedService.icon}
-                  </div>
-
-                  <h2 className="text-4xl font-black mb-3">
-                    {selectedService.title}
-                  </h2>
-
-                  <p className="text-white/90 leading-relaxed">
-                    {selectedService.description}
-                  </p>
-                </div>
-              </>
-            )}
-          </div>
-
-          {/* DERECHA */}
-          <div>
-            {selectedService && (
-              <Card className="p-6 sticky top-6 rounded-3xl shadow-xl border-0">
-                <div className="space-y-6">
-                  <h2 className="text-3xl font-bold text-foreground">
-                    {selectedService.title}
-                  </h2>
-
-                  {selectedService.sections.map(
-                    (section, idx) => (
-                      <div key={idx} className="space-y-3">
-                        <h3 className="text-lg font-bold text-primary">
-                          {section.title}
-                        </h3>
-
-                        {typeof section.content === 'string' ? (
-                          <p className="text-muted-foreground leading-relaxed">
-                            {section.content}
-                          </p>
-                        ) : (
-                          <ul className="space-y-3">
-                            {section.content.map(
-                              (item, itemIdx) => (
-                                <li
-                                  key={itemIdx}
-                                  className="flex items-start gap-3 text-muted-foreground"
-                                >
-                                  <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-
-                                  <span>{item}</span>
-                                </li>
-                              )
-                            )}
-                          </ul>
-                        )}
-                      </div>
-                    )
-                  )}
-
-                  <button className="w-full bg-primary text-primary-foreground py-3 rounded-xl font-semibold hover:opacity-90 transition-opacity mt-8">
-                    Solicitar Información
-                  </button>
-                </div>
-              </Card>
-            )}
-          </div>
-        </div>
-
-        {/* CTA */}
-        <div className="mt-16 bg-primary text-primary-foreground rounded-3xl p-8 text-center shadow-2xl">
-          <h2 className="text-3xl font-bold mb-4">
-            ¿Necesitas nuestros servicios?
+        {/* IZQUIERDA */}
+        <div className="space-y-4">
+          <h2 className="text-2xl font-bold text-white mb-6">
+            Nuestros Servicios
           </h2>
 
-          <p className="text-lg opacity-90 mb-6 max-w-2xl mx-auto">
-            Contáctanos hoy para una evaluación gratuita y personalizada.
-          </p>
+          <div className="space-y-3">
+            {services.map((service) => (
+              <button
+                key={service.id}
+                onClick={() => setExpandedService(service.id)}
+                className={`w-full text-left p-5 rounded-2xl transition-all duration-300 flex items-start gap-4 border ${
+                  expandedService === service.id
+                    ? 'bg-[#6CB519] text-white border-[#6CB519] shadow-2xl scale-[1.02]'
+                    : 'bg-[#1E293B] text-white border-[#334155] hover:bg-[#263548]'
+                }`}
+              >
+                <div className="mt-1 text-[#6CB519]">
+                  {service.icon}
+                </div>
 
-          <button className="bg-primary-foreground text-primary px-8 py-3 rounded-xl font-semibold hover:opacity-90 transition-opacity">
-            Contáctanos Ahora
-          </button>
+                <div>
+                  <div className="font-bold text-lg">
+                    {service.title}
+                  </div>
+
+                  <div className="text-sm text-gray-300 mt-1">
+                    {service.description}
+                  </div>
+                </div>
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* CENTRO - IMAGEN */}
+        <div className="relative h-[500px] lg:h-auto min-h-[500px] rounded-3xl overflow-hidden shadow-2xl border border-[#6CB519]/20">
+          {selectedService && (
+            <>
+              <Image
+                src={selectedService.image}
+                alt={selectedService.title}
+                fill
+                className="object-cover transition-all duration-500"
+              />
+
+              <div className="absolute inset-0 bg-black/55" />
+
+              <div className="absolute bottom-0 left-0 p-8 text-white">
+
+                <div className="mb-4 text-[#6CB519]">
+                  {selectedService.icon}
+                </div>
+
+                <h2 className="text-4xl font-black mb-3">
+                  {selectedService.title}
+                </h2>
+
+                <p className="text-gray-200 leading-relaxed">
+                  {selectedService.description}
+                </p>
+              </div>
+            </>
+          )}
+        </div>
+
+        {/* DERECHA */}
+        <div>
+          {selectedService && (
+            <Card className="p-6 sticky top-6 rounded-3xl shadow-2xl border border-[#6CB519]/20 bg-[#111827] text-white">
+
+              <div className="space-y-6">
+
+                <h2 className="text-3xl font-black text-white">
+                  {selectedService.title}
+                </h2>
+
+                {selectedService.sections.map(
+                  (section, idx) => (
+                    <div key={idx} className="space-y-3">
+
+                      <h3 className="text-lg font-bold text-[#6CB519]">
+                        {section.title}
+                      </h3>
+
+                      {typeof section.content === 'string' ? (
+                        <p className="text-gray-300 leading-relaxed">
+                          {section.content}
+                        </p>
+                      ) : (
+                        <ul className="space-y-3">
+                          {section.content.map(
+                            (item, itemIdx) => (
+                              <li
+                                key={itemIdx}
+                                className="flex items-start gap-3 text-gray-300"
+                              >
+                                <CheckCircle2 className="w-5 h-5 text-[#6CB519] flex-shrink-0 mt-0.5" />
+
+                                <span>{item}</span>
+                              </li>
+                            )
+                          )}
+                        </ul>
+                      )}
+                    </div>
+                  )
+                )}
+
+                <button className="w-full bg-[#6CB519] text-white py-3 rounded-xl font-bold hover:bg-[#5aa012] transition-all duration-300 mt-8 shadow-lg">
+                  Solicitar Información
+                </button>
+              </div>
+            </Card>
+          )}
         </div>
       </div>
-    </main>
-  );
+
+      {/* CTA */}
+      <div className="mt-16 bg-[#6CB519] text-white rounded-3xl p-10 text-center shadow-2xl">
+
+        <h2 className="text-3xl font-black mb-4">
+          ¿Necesitas nuestros servicios?
+        </h2>
+
+        <p className="text-lg opacity-90 mb-6 max-w-2xl mx-auto">
+          Contáctanos hoy para una evaluación gratuita y personalizada.
+        </p>
+
+        <button className="bg-white text-[#6CB519] px-8 py-3 rounded-xl font-bold hover:bg-gray-100 transition-all duration-300 shadow-lg">
+          Contáctanos Ahora
+        </button>
+      </div>
+    </div>
+  </main>
+);
 }

@@ -22,7 +22,7 @@ export default function Services() {
           <h1 className="text-white font-extrabold text-7xl leading-none uppercase tracking-tight">
             CONTROL<br />AMBIENTAL
           </h1>
-          <div className="flex items-center mt-5 border-l-4 border-red-600 pl-4">
+          <div className="flex items-center mt-5 border-l-4 border-green-600 pl-4">
             <p className="text-white font-semibold text-2xl italic">
               Soluciones a las plagas!
             </p>

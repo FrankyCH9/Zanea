@@ -25,14 +25,16 @@ export default function Header() {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-3 md:gap-0">
           <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-center">
             <a
-              href="tel:947454525"
+              href="https://wa.me/51998998318"
               className="flex items-center gap-2 hover:text-gray-300 transition"
+              target="_blank"
+  rel="noopener noreferrer"
             >
               <Phone size={16} />
-              <span>947454525</span>
+              <span>998998318</span>
             </a>
             <a
-              href="mailto:informes@controlambiental.pe"
+              href="mailto:comercial@saneagroupperu.com"
               className="flex items-center gap-2 hover:text-gray-300 transition"
             >
               <Mail size={16} />
@@ -40,13 +42,30 @@ export default function Header() {
             </a>
           </div>
           <div className="flex gap-4">
-            <a href="https://www.facebook.com/saneagroup?locale=es_LA" className="hover:text-gray-300 transition">
+            <a
+              href="https://www.facebook.com/saneagroup?locale=es_LA"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-gray-300 transition"
+            >
               <Facebook size={18} />
             </a>
-            <a href="https://www.instagram.com/sanea_group/" className="hover:text-gray-300 transition">
+
+            <a
+              href="https://www.instagram.com/sanea_group/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-gray-300 transition"
+            >
               <Instagram size={18} />
             </a>
-            <a href="#" className="hover:text-gray-300 transition">
+
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-gray-300 transition"
+            >
               <Linkedin size={18} />
             </a>
           </div>
@@ -78,7 +97,7 @@ export default function Header() {
             </Link>
 
             <Link
-              href="#nosotros"
+              href="/#nosotros"
               onClick={() => setActivo("nosotros")}
               className={`px-4 py-2 font-semibold text-xs lg:text-sm uppercase rounded transition ${
                 activo === "nosotros" ? "bg-gray-400" : "hover:bg-gray-400"
@@ -132,7 +151,7 @@ export default function Header() {
             </Link>
 
             <Link
-              href="/statistics-section"
+              href="/#nosotros"
               onClick={() => setIsMobileMenuOpen(false)}
               className="px-4 py-2 hover:bg-gray-500 font-semibold text-sm rounded uppercase"
             >
@@ -148,7 +167,7 @@ export default function Header() {
             </Link>
 
             <Link
-              href="/sectores"
+              href="/biblioteca"
               onClick={() => setIsMobileMenuOpen(false)}
               className="px-4 py-2 hover:bg-gray-500 font-semibold text-sm rounded uppercase"
             >
