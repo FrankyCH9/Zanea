@@ -1,6 +1,7 @@
-import { Users, Shield } from 'lucide-react';
-import Image from 'next/image';
+import { Users2, Lightbulb, Award, HeartHandshake , Zap} from "lucide-react";
+import Image from "next/image";
 
+import { Users, Shield } from "lucide-react";
 const hexClip = "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)";
 
 const HEX_W = 130;
@@ -55,7 +56,7 @@ export default function StatisticsSection() {
   return (
     <section className="py-20 bg-white">
       {/* <div className="max-w-6xl mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center gap-16"> */}
-        {/* Estadísticas */}
+      {/* Estadísticas */}
       <div className="max-w-6xl mx-auto mt-12 px-6 lg:px-12 flex flex-col lg:flex-row items-center mb-16 gap-20">
         <div
           className="relative flex-shrink-0 scale-90 md:scale-100"
@@ -128,32 +129,36 @@ export default function StatisticsSection() {
       </div>
       <div className="max-w-7xl mx-auto mt-30">
         {/* Header */}
+        {/* Título */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-black mb-4 text-balance">
+          <h2 className="text-4xl sm:text-5xl font-bold text-[#1E3A5F] mb-4">
             NUESTRA EXPERIENCIA
           </h2>
           <p className="text-lg sm:text-xl text-black font-semibold">
-            Nuestra manera de hacer las cosas
+            Pilares y valores que nos distinguen
           </p>
         </div>
 
-        {/* Content Grid */}
+        {/* FILA 1 */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-          {/* Confianza Card */}
+          {/* Talento Humano */}
           <div className="border-2 border-white/30 rounded-lg p-8 text-center backdrop-blur-sm hover:border-white/50 transition-colors">
             <div className="flex justify-center mb-6">
               <div className="bg-black/20 p-4 rounded-full">
-                <Shield className="w-8 h-8 text-white" />
+                <Users className="w-8 h-8 text-black" />
               </div>
             </div>
-            <h3 className="text-2xl font-bold text-black  mb-4">Confianza</h3>
+            <h3 className="text-2xl font-bold text-[#6CB519] mb-4">
+              Talento Humano
+            </h3>
             <p className="text-black/90 leading-relaxed text-sm sm:text-base">
-              Nos encargamos de todo para que el área de MIP pueda concentrarse
-              en sus tareas, sin preocuparse por la gestión de su proveedor.
+              Contamos con personal altamente capacitado y comprometido,
+              preparado para brindar soluciones eficaces y un servicio de
+              excelencia.
             </p>
           </div>
 
-          {/* Eagle Image */}
+          {/* Imagen */}
           <div className="flex justify-center md:scale-110">
             <div className="relative w-full h-80 sm:h-96">
               <Image
@@ -166,39 +171,42 @@ export default function StatisticsSection() {
             </div>
           </div>
 
-          {/* Compromiso Card */}
+          {/* Innovación */}
           <div className="border-2 border-white/30 rounded-lg p-8 text-center backdrop-blur-sm hover:border-white/50 transition-colors">
             <div className="flex justify-center mb-6">
               <div className="bg-black/20 p-4 rounded-full">
-                <Users className="w-8 h-8 text-black " />
+                <Zap className="w-8 h-8 text-black" />
               </div>
             </div>
-            <h3 className="text-2xl font-bold text-black mb-4">Compromiso</h3>
+            <h3 className="text-2xl font-bold text-[#6CB519] mb-4">
+              Innovación y Mejora Continua
+            </h3>
             <p className="text-black/90 leading-relaxed text-sm sm:text-base">
-              Nuestros trabajadores se identifican plenamente con cada cliente,
-              dedicándose en todo momento a garantizar su satisfacción y
-              ofreciendo lo mejor de sí mismos.
+              Implementamos nuevas tecnologías y optimizamos constantemente
+              nuestros procesos para ofrecer soluciones cada vez más eficientes.
             </p>
           </div>
         </div>
 
-        {/* Content Grid */}
-        <div className=" mt-30 grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-          {/* Confianza Card */}
+        {/* FILA 2 */}
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+          {/* Calidad */}
           <div className="border-2 border-white/30 rounded-lg p-8 text-center backdrop-blur-sm hover:border-white/50 transition-colors">
             <div className="flex justify-center mb-6">
               <div className="bg-black/20 p-4 rounded-full">
-                <Shield className="w-8 h-8 text-white" />
+                <Award className="w-8 h-8 text-black" />
               </div>
             </div>
-            <h3 className="text-2xl font-bold text-black  mb-4">Confianza</h3>
+            <h3 className="text-2xl font-bold text-[#6CB519] mb-4">
+              Calidad del Servicio
+            </h3>
             <p className="text-black/90 leading-relaxed text-sm sm:text-base">
-              Nos encargamos de todo para que el área de MIP pueda concentrarse
-              en sus tareas, sin preocuparse por la gestión de su proveedor.
+              Garantizamos altos estándares de calidad en cada intervención,
+              buscando siempre superar las expectativas de nuestros clientes.
             </p>
           </div>
 
-          {/* Eagle Image */}
+          {/* Imagen */}
           <div className="flex justify-center md:scale-110">
             <div className="relative w-full h-80 sm:h-96">
               <Image
@@ -211,22 +219,66 @@ export default function StatisticsSection() {
             </div>
           </div>
 
-          {/* Compromiso Card */}
+          {/* Compromiso */}
           <div className="border-2 border-white/30 rounded-lg p-8 text-center backdrop-blur-sm hover:border-white/50 transition-colors">
             <div className="flex justify-center mb-6">
               <div className="bg-black/20 p-4 rounded-full">
-                <Users className="w-8 h-8 text-black " />
+                <HeartHandshake className="w-8 h-8 text-black" />
               </div>
             </div>
-            <h3 className="text-2xl font-bold text-black mb-4">Compromiso</h3>
+            <h3 className="text-2xl font-bold text-[#6CB519] mb-4">Compromiso</h3>
             <p className="text-black/90 leading-relaxed text-sm sm:text-base">
-              Nuestros trabajadores se identifican plenamente con cada cliente,
-              dedicándose en todo momento a garantizar su satisfacción y
-              ofreciendo lo mejor de sí mismos.
+              Actuamos con responsabilidad y dedicación, cumpliendo nuestros
+              compromisos y generando valor en cada servicio realizado.
             </p>
           </div>
         </div>
-        
+
+        {/* FILA 3 */}
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+          {/* Confianza */}
+          <div className="border-2 border-white/30 rounded-lg p-8 text-center backdrop-blur-sm hover:border-white/50 transition-colors">
+            <div className="flex justify-center mb-6">
+              <div className="bg-black/20 p-4 rounded-full">
+                <Shield className="w-8 h-8 text-black" />
+              </div>
+            </div>
+            <h3 className="text-2xl font-bold text-[#6CB519] mb-4">Confianza</h3>
+            <p className="text-black/90 leading-relaxed text-[#6CB519] sm:text-base">
+              Construimos relaciones sólidas con nuestros clientes basadas en la
+              transparencia, honestidad y resultados comprobados.
+            </p>
+          </div>
+
+          {/* Imagen */}
+          <div className="flex justify-center md:scale-110">
+            <div className="relative w-full h-80 sm:h-96">
+              <Image
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-PLAwikBP6ZcPmUQq9ayn2yPhoymJGg.png"
+                alt="Águila en vuelo"
+                fill
+                className="object-cover rounded-lg"
+                priority
+              />
+            </div>
+          </div>
+
+          {/* Trabajo en Equipo */}
+          <div className="border-2 border-white/30 rounded-lg p-8 text-center backdrop-blur-sm hover:border-white/50 transition-colors">
+            <div className="flex justify-center mb-6">
+              <div className="bg-black/20 p-4 rounded-full">
+                <Users className="w-8 h-8 text-black" />
+              </div>
+            </div>
+            <h3 className="text-2xl font-bold text-[#6CB519] mb-4">
+              Trabajo en Equipo
+            </h3>
+            <p className="text-black/90 leading-relaxed text-sm sm:text-base">
+              Fomentamos la colaboración y el respeto mutuo para alcanzar
+              objetivos comunes y brindar el mejor servicio posible.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );
