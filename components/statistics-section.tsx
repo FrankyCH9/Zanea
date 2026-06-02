@@ -54,15 +54,17 @@ const hexItems: HexItem[] = [
 export default function StatisticsSection() {
   return (
     <section className="py-20 bg-white">
-      <div className="max-w-6xl mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center gap-16">
+      {/* <div className="max-w-6xl mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center gap-16"> */}
+        {/* Estadísticas */}
+      <div className="max-w-6xl mx-auto mt-12 px-6 lg:px-12 flex flex-col lg:flex-row items-center mb-16 gap-20">
         <div
-          className="relative flex-shrink-0"
+          className="relative flex-shrink-0 scale-90 md:scale-100"
           style={{ width: 420, height: 380 }}
         >
           {hexItems.map((hex, i) => (
             <div
               key={i}
-              className="absolute overflow-hidden"
+              className="absolute overflow-hidden shadow-xl"
               style={{
                 width: HEX_W,
                 height: HEX_H,
@@ -76,19 +78,21 @@ export default function StatisticsSection() {
                 <img
                   src={hex.img}
                   alt=""
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover hover:scale-110 transition duration-500"
                 />
               )}
+
               {hex.isCenter && (
-                <div className="w-full h-full flex flex-col items-center justify-center bg-gray-900">
+                <div className="w-full h-full flex flex-col items-center justify-center bg-[#111827]">
                   <span
                     className="font-black text-white leading-none"
                     style={{ fontSize: 48 }}
                   >
                     +7
                   </span>
+
                   <span
-                    className="font-black text-white tracking-widest uppercase"
+                    className="font-black text-[#6CB519] tracking-widest uppercase"
                     style={{ fontSize: 18 }}
                   >
                     AÑOS

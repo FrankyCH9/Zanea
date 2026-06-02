@@ -10,7 +10,7 @@ export default function Services() {
   return (
     <section className="relative w-full h-[500px] overflow-hidden">
       <img
-        src="https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg?auto=compress&cs=tinysrgb&w=1600"
+        src="https://www.multianau.com/wp-content/uploads/2024/05/bg-header-servicios-control-de-plagas.jpg"
         alt="Industrial warehouse"
         className="absolute inset-0 w-full h-full object-cover"
       />

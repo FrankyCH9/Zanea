@@ -16,7 +16,7 @@ export default function ProductsSection() {
           }
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.2 },
     );
     if (sectionRef.current) observer.observe(sectionRef.current);
   }, []);
@@ -107,20 +107,20 @@ Elaboramos programas de Manejo Integral de Plagas (MIP), de acuerdo a la problem
               },
 
               {
-  img: "/duct-tape-rolls.png",
-  title: "DESINFECCIÓN DE AMBIENTES",
-  desc: `
+                img: "/duct-tape-rolls.png",
+                title: "DESINFECCIÓN DE AMBIENTES",
+                desc: `
 1. Son potentes desinfectantes microbicidas a base de guanidina polimérica en medio alcohólico.  
 2. Eliminan todo tipo de virus, bacterias, hongos y levaduras.  
 3. Poseen una combinación sinérgica de principios activos extraídos de vegetales.  
 4. Actúan a nivel de membrana celular, enzimas y ácidos nucleicos de los microorganismos.  
-`
-},
+`,
+              },
 
-             {
-  img: "/fragile-tape.png",
-  title: "LIMPIEZA Y DESINFECCIÓN DE RESERVORIOS DE AGUA",
-  desc: `
+              {
+                img: "/fragile-tape.png",
+                title: "LIMPIEZA Y DESINFECCIÓN DE RESERVORIOS DE AGUA",
+                desc: `
 Realizamos limpieza de:  
 • Cisternas  
 • Tanques elevados  
@@ -130,13 +130,13 @@ Cumplimos altos estándares de calidad y seguridad:
 • Realizamos mediciones de gases y verificamos los niveles de oxígeno con equipos de alta tecnología, capaces de monitorear hasta 6 gases de manera simultánea, asegurando que se encuentren dentro de los parámetros establecidos por la OSHA.  
 • Realizamos análisis del nivel de cloro libre (mg/L Cl₂) para garantizar que las aguas de consumo han sido correctamente desinfectadas y se encuentren dentro de los parámetros establecidos (no menor a 0.5 mg/L Cl₂).  
 • Contamos con personal técnico altamente capacitado y especializado en actividades de alto riesgo.  
-`
-},
+`,
+              },
 
               {
-  img: "/packing-tape.png",
-  title: "Mantenimiento de Reservorios de Agua",
-  desc: `
+                img: "/packing-tape.png",
+                title: "Mantenimiento de Reservorios de Agua",
+                desc: `
 Físico:
 - Cambio de componentes y accesorios
 - Mantenimiento preventivo de válvulas y componentes
@@ -155,31 +155,31 @@ Tablero electrónico:
 - Ajuste de borneras
 - Verificación e inspección de controles de funcionamiento
 `,
-},
+              },
 
               {
-  img: "/crystal-bags.png",
-  title: "Control de Animales Menores",
-  desc: `
+                img: "/crystal-bags.png",
+                title: "Control de Animales Menores",
+                desc: `
 - Reubicación de animales menores abandonados: por lo general perros y gatos que buscan estar cerca de las personas.
 - Reubicación de animales callejeros: suelen mantener distancia de las personas, vivir en grupos o manadas, y tener una apariencia más tensa y cautelosa (postura precavida, cola baja, etc.).
 `,
-},
+              },
 
               {
-  img: "/biodegradable-bags.png",
-  title: "Control Aviar",
-  desc: `
+                img: "/biodegradable-bags.png",
+                title: "Control Aviar",
+                desc: `
 Metodología de tratamiento:
 - Púas anti-aves: método eficaz para el control de palomas. Se instalan en puntos donde las aves pernoctan o intentan hacer nidos.
 - Colocación de gel anti-aves: mantiene las mismas propiedades que el repelente líquido, no es tóxico para el ser humano. Ideal para cornisas, barandas, techos y cualquier punto de aterrizaje.
 - Jaulas capturadoras de palomas: se instalan de acuerdo a la ubicación y comportamiento, dentro de un plan integral anual o en casos de infestación. Funcionan con atrayentes naturales como maíz y agua, permitiendo la entrada pero no la salida.
 `,
-},
+              },
               {
-  img: "/red-medical-bags.png",
-  title: "Consultoría en Seguridad y Medio Ambiente",
-  desc: `
+                img: "/red-medical-bags.png",
+                title: "Consultoría en Seguridad y Medio Ambiente",
+                desc: `
 Realizamos estudios:
 - Expedientes de autorizaciones sanitarias
 - Estudios de Impacto Ambiental (EIASD, EIA, DIA)
@@ -191,9 +191,7 @@ Realizamos estudios:
 - Declaración de Impacto Ambiental (DIA) para proyectos de disposición final de residuos sólidos (relleno sanitario)
 - Sistema integrado de manejo de residuos sólidos municipales
 `,
-},
-
-              
+              },
             ].map((product, i) => (
               <div
                 key={i}
