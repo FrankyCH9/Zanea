@@ -48,17 +48,17 @@ const hexItems: HexItem[] = [
   {
     top: 0,
     left: 95,
-    img: "https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=300",
+    img: "/exagono/1.png",
   },
   {
     top: 0,
     left: 225,
-    img: "https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg?auto=compress&cs=tinysrgb&w=300",
+    img: "/exagono/2.png",
   },
   {
     top: 115,
     left: 30,
-    img: "https://images.pexels.com/photos/2062316/pexels-photo-2062316.jpeg?auto=compress&cs=tinysrgb&w=300",
+    img: "/exagono/3.png",
   },
   {
     top: 115,
@@ -68,17 +68,17 @@ const hexItems: HexItem[] = [
   {
     top: 115,
     left: 290,
-    img: "https://images.pexels.com/photos/6129507/pexels-photo-6129507.jpeg?auto=compress&cs=tinysrgb&w=300",
+    img: "/exagono/4.png",
   },
   {
     top: 230,
     left: 95,
-    img: "https://images.pexels.com/photos/3867349/pexels-photo-3867349.jpeg?auto=compress&cs=tinysrgb&w=300",
+    img: "/exagono/5.png",
   },
   {
     top: 230,
     left: 225,
-    img: "https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=300",
+    img: "/exagono/6.png",
   },
 ];
 
@@ -105,7 +105,7 @@ export default function ControlAmbiental() {
 ${mensaje}
     `;
 
-    const numeroWhatsApp = "51973054241";
+    const numeroWhatsApp = "51998998318";
 
     const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(
       texto,
@@ -115,7 +115,7 @@ ${mensaje}
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-br from-[#0f172a] via-[#111827] to-[#1e293b]">
       {/* Hero Section */}
       <div className="relative h-52 overflow-hidden">
         <Image
@@ -230,7 +230,7 @@ ${mensaje}
       {/* Main Content */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 p-8 max-w-7xl mx-auto">
         {/* Servicios */}
-        <div className="bg-gray-100 p-8 rounded-3xl shadow-lg">
+        <div className="bg-gray-100 p-14 rounded-3xl shadow-lg">
           <h2 className="text-3xl font-black mb-4 leading-tight">
             ¿Tienes Plagas? <br />
             <span className="text-[#6CB519]">Nosotros tenemos soluciones.</span>
@@ -252,9 +252,9 @@ ${mensaje}
             ))}
           </div>
 
-          <Button className="w-full mt-8 bg-green-600 hover:bg-green-700 text-white font-bold py-6 rounded-xl">
+          {/* <Button className="w-full mt-8 bg-green-600 hover:bg-green-700 text-white font-bold py-6 rounded-xl">
             Ver casos de éxito
-          </Button>
+          </Button> */}
         </div>
 
         {/* Formulario */}

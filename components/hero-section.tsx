@@ -10,28 +10,28 @@ const galleryItems = [
     description:
       'La presencia de aves en techos, estructuras y áreas operativas puede ocasionar contaminación, deterioro de infraestructuras y afectar la imagen de su empresa. Brindamos soluciones integrales para el manejo y exclusión de aves, aplicando métodos seguros, éticos y acordes a la normativa peruana. Nuestro servicio está respaldado por SERFOR, asegurando intervenciones eficientes y responsables en todo tipo de instalaciones.',
     mainImage:
-      '/inicio/control.jpeg',
+      '/servicios/control.png',
   },
   {
     id: 2,
     title: 'CONTROL DE PLAGAS',
     description: 'Utilizamos metodologías y procesos eficientes en la eliminación de todo tipo de plagas rastreras o voladoras a niveles aceptables. Relacionamos los niveles poblacionales de las plagas y efectividad de los controles implementados.',
     mainImage:
-      '/inicio/control2.jpeg',
+      '/servicios/controlp.png',
   },
   {
     id: 3,
     title: 'DESINFECCION AMBIENTAL',
     description: 'Eliminación eficaz de microorganismos patógenos (bacterias, virus y hongos) en todo tipo de ambientes, mediante sistemas de nebulización en frío que permiten una cobertura uniforme y profunda. Aplicamos agentes químicos especializados que garantizan espacios seguros, higienizados y libres de contaminantes.',
     mainImage:
-      '/inicio/DESINFECCION.jpeg',
+      '/servicios/ambiente.png',
   },
   {
     id: 4,
     title: 'CONSULTORIA EN SEGURIDAD Y MEDIO AMBIENTE',
     description: 'Impulsamos la gestión segura y sostenible de su empresa mediante asesoría especializada y elaboración de estudios ambientales.',
     mainImage:
-      '/inicio/consultoria.jpeg',
+      '/servicios/seguridad.png',
   },
   {
     id: 5,
@@ -45,7 +45,7 @@ const galleryItems = [
     title: 'LIMPIEZA Y DESINFECCION DE RESERVORIOS',
     description: 'Limpieza profunda de paredes, pisos y la eliminación de toda materia orgánica (bacterias, hongos y sarro) o cuerpo extraño en un tanque, cisterna o reservorio a través de equipos mecánicos y eléctricos.',
     mainImage:
-      '/inicio/plagas.jpeg',
+      '/servicios/limpieza.png',
   },
 ];
 

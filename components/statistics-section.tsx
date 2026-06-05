@@ -1,4 +1,4 @@
-import { Users2, Lightbulb, Award, HeartHandshake , Zap} from "lucide-react";
+import { Users2, Lightbulb, Award, HeartHandshake, Zap } from "lucide-react";
 import Image from "next/image";
 
 import { Users, Shield } from "lucide-react";
@@ -18,17 +18,17 @@ const hexItems: HexItem[] = [
   {
     top: 0,
     left: 95,
-    img: "https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=300",
+    img: "/exagono/1.png",
   },
   {
     top: 0,
     left: 225,
-    img: "https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg?auto=compress&cs=tinysrgb&w=300",
+    img: "/exagono/2.png",
   },
   {
     top: 115,
     left: 30,
-    img: "https://images.pexels.com/photos/2062316/pexels-photo-2062316.jpeg?auto=compress&cs=tinysrgb&w=300",
+    img: "/exagono/3.png",
   },
   {
     top: 115,
@@ -38,23 +38,23 @@ const hexItems: HexItem[] = [
   {
     top: 115,
     left: 290,
-    img: "https://images.pexels.com/photos/6129507/pexels-photo-6129507.jpeg?auto=compress&cs=tinysrgb&w=300",
+    img: "/exagono/4.png",
   },
   {
     top: 230,
     left: 95,
-    img: "https://images.pexels.com/photos/3867349/pexels-photo-3867349.jpeg?auto=compress&cs=tinysrgb&w=300",
+    img: "/exagono/5.png",
   },
   {
     top: 230,
     left: 225,
-    img: "https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=300",
+    img: "/exagono/6.png",
   },
 ];
 
 export default function StatisticsSection() {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20  ">
       {/* <div className="max-w-6xl mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center gap-16"> */}
       {/* Estadísticas */}
       <div className="max-w-6xl mx-auto mt-12 px-6 lg:px-12 flex flex-col lg:flex-row items-center mb-16 gap-20">
@@ -105,21 +105,21 @@ export default function StatisticsSection() {
         </div>
 
         <div className="flex-1 max-w-xl">
-          <p className="text-red-600 font-bold text-sm uppercase tracking-widest mb-3"></p>
+          <p className="text-white font-bold text-sm uppercase tracking-widest mb-3"></p>
 
-          <h2 className="text-4xl font-black text-[#111827] leading-tight mb-6">
+          <h2 className="text-4xl font-black text-white leading-tight mb-6">
             Misión y Visión
           </h2>
 
-          <div className="space-y-4 text-gray-700 leading-relaxed text-base">
+          <div className="space-y-4 text-white leading-relaxed text-base">
             <p>
-              <span className="font-semibold text-gray-900">Misión:</span> Dar
+              <span className="font-semibold text-white">Misión:</span> Dar
               soluciones eficientes a nuestros socios, asegurando la calidad y
               satisfacción en la prestación de nuestros servicios.
             </p>
 
             <p>
-              <span className="font-semibold text-gray-900">Visión:</span> Ser
+              <span className="font-semibold text-white">Visión:</span> Ser
               reconocidos a nivel nacional como una empresa líder en la
               prestación de servicios en ingeniería, saneamiento ambiental y
               gestión en medio ambiente.
@@ -127,158 +127,68 @@ export default function StatisticsSection() {
           </div>
         </div>
       </div>
-      <div className="max-w-7xl mx-auto mt-30">
-        {/* Header */}
-        {/* Título */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-[#1E3A5F] mb-4">
-            NUESTRA EXPERIENCIA
-          </h2>
-          <p className="text-lg sm:text-xl text-black font-semibold">
-            Pilares y valores que nos distinguen
-          </p>
-        </div>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {[
+          {
+            title: "Talento Humano",
+            description:
+              "Contamos con personal altamente capacitado y comprometido, preparado para brindar soluciones eficaces y un servicio de excelencia.",
+          },
+          {
+            title: "Innovación y Mejora Continua",
+            description:
+              "Implementamos nuevas tecnologías y optimizamos constantemente nuestros procesos para ofrecer soluciones cada vez más eficientes.",
+          },
+          {
+            title: "Calidad del Servicio",
+            description:
+              "Garantizamos altos estándares de calidad en cada intervención, buscando siempre superar las expectativas de nuestros clientes.",
+          },
+          {
+            title: "Compromiso",
+            description:
+              "Actuamos con responsabilidad y dedicación, cumpliendo nuestros compromisos y generando valor en cada servicio realizado.",
+          },
+          {
+            title: "Confianza",
+            description:
+              "Construimos relaciones sólidas con nuestros clientes basadas en la transparencia, honestidad y resultados comprobados.",
+          },
+          {
+            title: "Trabajo en Equipo",
+            description:
+              "Fomentamos la colaboración y el respeto mutuo para alcanzar objetivos comunes y brindar el mejor servicio posible.",
+          },
+        ].map((item, index) => (
+          <div
+            key={index}
+            className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden"
+          >
+            {/* Barra superior */}
+            <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-[#6CB519] to-[#0F4C81]" />
 
-        {/* FILA 1 */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-          {/* Talento Humano */}
-          <div className="border-2 border-white/30 rounded-lg p-8 text-center backdrop-blur-sm hover:border-white/50 transition-colors">
-            <div className="flex justify-center mb-6">
-              <div className="bg-black/20 p-4 rounded-full">
-                <Users className="w-8 h-8 text-black" />
-              </div>
-            </div>
-            <h3 className="text-2xl font-bold text-[#6CB519] mb-4">
-              Talento Humano
+            {/* Número decorativo */}
+            <span className="absolute top-4 right-6 text-5xl font-black text-gray-100">
+              {String(index + 1).padStart(2, "0")}
+            </span>
+
+            {/* Título */}
+            <h3 className="text-2xl font-bold text-[#0F4C81] mb-4 relative z-10">
+              {item.title}
             </h3>
-            <p className="text-black/90 leading-relaxed text-sm sm:text-base">
-              Contamos con personal altamente capacitado y comprometido,
-              preparado para brindar soluciones eficaces y un servicio de
-              excelencia.
+
+            {/* Línea decorativa */}
+            <div className="w-16 h-1 bg-[#6CB519] rounded-full mb-5"></div>
+
+            {/* Texto */}
+            <p className="text-gray-600 leading-relaxed relative z-10">
+              {item.description}
             </p>
-          </div>
 
-          {/* Imagen */}
-          <div className="flex justify-center md:scale-110">
-            <div className="relative w-full h-80 sm:h-96">
-              <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-PLAwikBP6ZcPmUQq9ayn2yPhoymJGg.png"
-                alt="Águila en vuelo"
-                fill
-                className="object-cover rounded-lg"
-                priority
-              />
-            </div>
+            {/* Efecto hover */}
+            <div className="absolute inset-0 bg-gradient-to-br from-[#6CB519]/5 to-[#0F4C81]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           </div>
-
-          {/* Innovación */}
-          <div className="border-2 border-white/30 rounded-lg p-8 text-center backdrop-blur-sm hover:border-white/50 transition-colors">
-            <div className="flex justify-center mb-6">
-              <div className="bg-black/20 p-4 rounded-full">
-                <Zap className="w-8 h-8 text-black" />
-              </div>
-            </div>
-            <h3 className="text-2xl font-bold text-[#6CB519] mb-4">
-              Innovación y Mejora Continua
-            </h3>
-            <p className="text-black/90 leading-relaxed text-sm sm:text-base">
-              Implementamos nuevas tecnologías y optimizamos constantemente
-              nuestros procesos para ofrecer soluciones cada vez más eficientes.
-            </p>
-          </div>
-        </div>
-
-        {/* FILA 2 */}
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-          {/* Calidad */}
-          <div className="border-2 border-white/30 rounded-lg p-8 text-center backdrop-blur-sm hover:border-white/50 transition-colors">
-            <div className="flex justify-center mb-6">
-              <div className="bg-black/20 p-4 rounded-full">
-                <Award className="w-8 h-8 text-black" />
-              </div>
-            </div>
-            <h3 className="text-2xl font-bold text-[#6CB519] mb-4">
-              Calidad del Servicio
-            </h3>
-            <p className="text-black/90 leading-relaxed text-sm sm:text-base">
-              Garantizamos altos estándares de calidad en cada intervención,
-              buscando siempre superar las expectativas de nuestros clientes.
-            </p>
-          </div>
-
-          {/* Imagen */}
-          <div className="flex justify-center md:scale-110">
-            <div className="relative w-full h-80 sm:h-96">
-              <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-PLAwikBP6ZcPmUQq9ayn2yPhoymJGg.png"
-                alt="Águila en vuelo"
-                fill
-                className="object-cover rounded-lg"
-                priority
-              />
-            </div>
-          </div>
-
-          {/* Compromiso */}
-          <div className="border-2 border-white/30 rounded-lg p-8 text-center backdrop-blur-sm hover:border-white/50 transition-colors">
-            <div className="flex justify-center mb-6">
-              <div className="bg-black/20 p-4 rounded-full">
-                <HeartHandshake className="w-8 h-8 text-black" />
-              </div>
-            </div>
-            <h3 className="text-2xl font-bold text-[#6CB519] mb-4">Compromiso</h3>
-            <p className="text-black/90 leading-relaxed text-sm sm:text-base">
-              Actuamos con responsabilidad y dedicación, cumpliendo nuestros
-              compromisos y generando valor en cada servicio realizado.
-            </p>
-          </div>
-        </div>
-
-        {/* FILA 3 */}
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-          {/* Confianza */}
-          <div className="border-2 border-white/30 rounded-lg p-8 text-center backdrop-blur-sm hover:border-white/50 transition-colors">
-            <div className="flex justify-center mb-6">
-              <div className="bg-black/20 p-4 rounded-full">
-                <Shield className="w-8 h-8 text-black" />
-              </div>
-            </div>
-            <h3 className="text-2xl font-bold text-[#6CB519] mb-4">Confianza</h3>
-            <p className="text-black/90 leading-relaxed text-[#6CB519] sm:text-base">
-              Construimos relaciones sólidas con nuestros clientes basadas en la
-              transparencia, honestidad y resultados comprobados.
-            </p>
-          </div>
-
-          {/* Imagen */}
-          <div className="flex justify-center md:scale-110">
-            <div className="relative w-full h-80 sm:h-96">
-              <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-PLAwikBP6ZcPmUQq9ayn2yPhoymJGg.png"
-                alt="Águila en vuelo"
-                fill
-                className="object-cover rounded-lg"
-                priority
-              />
-            </div>
-          </div>
-
-          {/* Trabajo en Equipo */}
-          <div className="border-2 border-white/30 rounded-lg p-8 text-center backdrop-blur-sm hover:border-white/50 transition-colors">
-            <div className="flex justify-center mb-6">
-              <div className="bg-black/20 p-4 rounded-full">
-                <Users className="w-8 h-8 text-black" />
-              </div>
-            </div>
-            <h3 className="text-2xl font-bold text-[#6CB519] mb-4">
-              Trabajo en Equipo
-            </h3>
-            <p className="text-black/90 leading-relaxed text-sm sm:text-base">
-              Fomentamos la colaboración y el respeto mutuo para alcanzar
-              objetivos comunes y brindar el mejor servicio posible.
-            </p>
-          </div>
-        </div>
+        ))}
       </div>
     </section>
   );

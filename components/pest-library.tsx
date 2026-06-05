@@ -27,7 +27,7 @@ export default function PestLibrary() {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-br from-[#0f172a] via-[#111827] to-[#1e293b]">
       {/* ================= HEADER ================= */}
       <div className="bg-[#6CB519] text-white px-8 py-16">
         <div className="max-w-7xl mx-auto">
@@ -49,7 +49,7 @@ export default function PestLibrary() {
               Catálogo
             </p>
 
-            <h2 className="text-4xl font-black text-gray-800">
+            <h2 className="text-4xl font-black text-white">
               Plagas Urbanas
             </h2>
           </div>

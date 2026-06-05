@@ -22,7 +22,7 @@ const services: ServiceCategory[] = [
     id: "desinsectacion",
     title: "Desinsectación",
     icon: <Bug className="w-6 h-6" />,
-    image: "https://images.pexels.com/photos/4099467/pexels-photo-4099467.jpeg",
+    image: "/servi/3.png",
     description:
       "Técnicas especializadas para controlar y eliminar insectos y arácnidos",
     sections: [
@@ -63,7 +63,7 @@ const services: ServiceCategory[] = [
     id: "desinfeccion",
     title: "Desinfección",
     icon: <Shield className="w-6 h-6" />,
-    image: "https://images.pexels.com/photos/4099467/pexels-photo-4099467.jpeg",
+    image: "/servi/2.png",
     description: "Eliminación e inactivación de microorganismos patógenos",
     sections: [
       {
@@ -104,7 +104,7 @@ const services: ServiceCategory[] = [
     id: "desratizacion",
     title: "Desratización",
     icon: <Bug className="w-6 h-6" />,
-    image: "https://images.pexels.com/photos/4099467/pexels-photo-4099467.jpeg",
+    image: "/servi/1.png",
     description: "Control integral de ratas y ratones en ambientes urbanos",
     sections: [
       {
@@ -135,7 +135,7 @@ const services: ServiceCategory[] = [
     id: "reservorios",
     title: "Limpieza de Reservorios",
     icon: <Droplets className="w-6 h-6" />,
-    image: "https://images.pexels.com/photos/4099467/pexels-photo-4099467.jpeg",
+    image: "/servi/44.png",
     description:
       "Garantizamos condiciones adecuadas para el almacenamiento de agua",
     sections: [
@@ -172,7 +172,7 @@ const services: ServiceCategory[] = [
     id: "control-aviar",
     title: "Control Aviar",
     icon: <Bird className="w-6 h-6" />,
-    image: "https://images.pexels.com/photos/4099467/pexels-photo-4099467.jpeg",
+    image: "/servi/7.png",
     description: "Manejo especializado de aves plaga como palomas y gaviotas",
     sections: [
       {
@@ -199,50 +199,12 @@ const services: ServiceCategory[] = [
       },
     ],
   },
-  {
-    id: "servicios-electricos",
-    title: "Servicios Eléctricos",
-    icon: <Zap className="w-6 h-6" />,
-    image: "https://images.pexels.com/photos/4099467/pexels-photo-4099467.jpeg",
-    description:
-      "Garantizar la seguridad, continuidad y eficiencia de sistemas eléctricos",
-    sections: [
-      {
-        title: "SERVICIOS ELÉCTRICOS",
-        content:
-          "Soluciones integrales orientadas a garantizar la seguridad, continuidad y eficiencia de los sistemas eléctricos en instalaciones comerciales e industriales.",
-      },
-      {
-        title: "MANTENIMIENTO DE TABLEROS ELÉCTRICOS",
-        content:
-          "Revisión técnica de conexiones, limpieza de componentes, ajuste de terminales y verificación de protecciones eléctricas, asegurando un funcionamiento seguro y confiable.",
-      },
-      {
-        title: "INSTALACIÓN Y OPTIMIZACIÓN DE ILUMINACIÓN",
-        content:
-          "Implementación y renovación de sistemas de iluminación, incluyendo tecnología LED, adecuación de circuitos y validación de niveles lumínicos conforme a normativa.",
-      },
-      {
-        title: "SISTEMAS DE PUESTA A TIERRA",
-        content:
-          "Evaluación y mantenimiento de sistemas de puesta a tierra, medición de resistencia, verificación de continuidad y acondicionamiento de componentes.",
-      },
-      {
-        title: "BENEFICIOS",
-        content: [
-          "Mayor seguridad eléctrica",
-          "Continuidad operativa",
-          "Reducción de fallas y riesgos",
-          "Cumplimiento de normativas técnicas",
-        ],
-      },
-    ],
-  },
+  
   {
     id: "consultoria",
     title: "Consultoría Ambiental",
     icon: <Shield className="w-6 h-6" />,
-    image: "https://images.pexels.com/photos/4099467/pexels-photo-4099467.jpeg",
+    image: "/servi/6.png",
     description: "Cumplimiento normativo y gestión ambiental especializada",
     sections: [
       {

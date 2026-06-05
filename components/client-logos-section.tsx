@@ -75,7 +75,7 @@ export default function ClientLogosSection() {
 
       <section
         ref={sectionRef}
-        className={`py-20 px-4 bg-white overflow-hidden transition-all duration-1000 ${
+        className={`py-20 px-4  overflow-hidden transition-all duration-1000 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}
       >
