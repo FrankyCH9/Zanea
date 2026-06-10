@@ -117,12 +117,12 @@ ${mensaje}
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#0f172a] via-[#111827] to-[#1e293b]">
       {/* Hero Section */}
-      <div className="relative h-52 overflow-hidden">
+      <div className="relative h-60 overflow-hidden">
         <Image
-          src="https://www.tecnicontrolfumigaciones.com/wp-content/uploads/2023/05/fumigaciones4-tecnicontrol-banner1920-1.jpg"
+          src="/contacto/1.jpeg"
           alt="Control Ambiental"
           fill
-          className="object-cover"
+          className="object-cover object-[center_30%]"
           priority
         />
 
@@ -372,9 +372,7 @@ ${mensaje}
             <div className="flex items-start gap-4">
               <MapPin className="w-6 h-6 text-[#6CB519] mt-1" />
 
-              <p className="text-gray-700 font-medium">
-                Arequipa: Miraflores
-              </p>
+              <p className="text-gray-700 font-medium">Arequipa: Miraflores</p>
             </div>
 
             <div className="flex items-start gap-4">
