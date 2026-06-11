@@ -63,7 +63,7 @@ const services: ServiceCategory[] = [
     id: "desinfeccion",
     title: "Desinfección",
     icon: <Shield className="w-6 h-6" />,
-    image: "/servi/2.png",
+    image: "/servi/10.png",
     description: "Eliminación e inactivación de microorganismos patógenos",
     sections: [
       {
@@ -204,7 +204,7 @@ const services: ServiceCategory[] = [
     id: "consultoria",
     title: "Consultoría Ambiental",
     icon: <Shield className="w-6 h-6" />,
-    image: "/servi/6.png",
+    image: "/servi/11.png",
     description: "Cumplimiento normativo y gestión ambiental especializada",
     sections: [
       {
