@@ -22,7 +22,7 @@ const services: ServiceCategory[] = [
     id: "desinsectacion",
     title: "Desinsectación",
     icon: <Bug className="w-6 h-6" />,
-    image: "/servi/3.png",
+    image: "/servi/1.png",
     description:
       "Técnicas especializadas para controlar y eliminar insectos y arácnidos",
     sections: [
@@ -63,7 +63,7 @@ const services: ServiceCategory[] = [
     id: "desinfeccion",
     title: "Desinfección",
     icon: <Shield className="w-6 h-6" />,
-    image: "/servi/10.png",
+    image: "/servi/2.png",
     description: "Eliminación e inactivación de microorganismos patógenos",
     sections: [
       {
@@ -104,7 +104,7 @@ const services: ServiceCategory[] = [
     id: "desratizacion",
     title: "Desratización",
     icon: <Bug className="w-6 h-6" />,
-    image: "/servi/1.png",
+    image: "/servi/3.png",
     description: "Control integral de ratas y ratones en ambientes urbanos",
     sections: [
       {
@@ -135,7 +135,7 @@ const services: ServiceCategory[] = [
     id: "reservorios",
     title: "Limpieza de Reservorios",
     icon: <Droplets className="w-6 h-6" />,
-    image: "/servi/44.png",
+    image: "/servi/4.png",
     description:
       "Garantizamos condiciones adecuadas para el almacenamiento de agua",
     sections: [
@@ -172,7 +172,7 @@ const services: ServiceCategory[] = [
     id: "control-aviar",
     title: "Control Aviar",
     icon: <Bird className="w-6 h-6" />,
-    image: "/servi/7.png",
+    image: "/servi/5.png",
     description: "Manejo especializado de aves plaga como palomas y gaviotas",
     sections: [
       {
@@ -204,7 +204,7 @@ const services: ServiceCategory[] = [
     id: "consultoria",
     title: "Consultoría Ambiental",
     icon: <Shield className="w-6 h-6" />,
-    image: "/servi/11.png",
+    image: "/servi/6.png",
     description: "Cumplimiento normativo y gestión ambiental especializada",
     sections: [
       {

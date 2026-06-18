@@ -27,8 +27,8 @@ export default function Footer() {
               <Image
                 src="experiencia/1.png"
                 alt="logo"
-                width={180}
-                height={180}
+                width={220}
+                height={220}
               />
               <div>
                 {/* <h2 className="text-xl font-semibold leading-tight">
@@ -88,8 +88,7 @@ export default function Footer() {
             <div>
               <p className="font-semibold text-white">ESTAMOS EN:</p>
               <p className="text-gray-400 leading-relaxed">
-                LIMA – TRUJILLO – CHICLAYO – PIURA – AREQUIPA – <br />
-                CUZCO – IQUITOS
+                CENTRO Y SUR DEL PAÍS
               </p>
             </div>
 

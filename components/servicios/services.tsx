@@ -1,10 +1,10 @@
-const services = [
-  'CONTROL AMBIENTAL',
-  'CONTROL DE PLAGAS',
-  'CONTROL AVIAR',
-  'INSPECCIONES SANITARIAS',
-  'CAPACITACIONES',
-];
+// const services = [
+//   'CONTROL AMBIENTAL',
+//   'CONTROL DE PLAGAS',
+//   'CONTROL AVIAR',
+//   'INSPECCIONES SANITARIAS',
+//   'CAPACITACIONES',
+// ];
 
 export default function Services() {
   return (
@@ -20,7 +20,7 @@ export default function Services() {
         <div className="flex flex-col justify-center max-w-xl">
           <p className="text-white font-bold text-lg mb-1">¡Hola! Bienvenidos a:</p>
           <h1 className="text-white font-extrabold text-7xl leading-none uppercase tracking-tight">
-            CONTROL<br />AMBIENTAL
+            SANEA<br />GROUP
           </h1>
           <div className="flex items-center mt-5 border-l-4 border-green-600 pl-4">
             <p className="text-white font-semibold text-2xl italic">
@@ -31,7 +31,7 @@ export default function Services() {
 
         <div className="flex flex-col justify-center ml-auto">
           <ul className="space-y-3">
-            {services.map((service) => (
+            {/* {services.map((service) => (
               <li key={service}>
                 <a
                   href="#"
@@ -40,7 +40,7 @@ export default function Services() {
                   {service}
                 </a>
               </li>
-            ))}
+            ))} */}
           </ul>
         </div>
       </div>

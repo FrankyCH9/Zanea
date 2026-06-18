@@ -10,42 +10,42 @@ const galleryItems = [
     description:
       'La presencia de aves en techos, estructuras y áreas operativas puede ocasionar contaminación, deterioro de infraestructuras y afectar la imagen de su empresa. Brindamos soluciones integrales para el manejo y exclusión de aves, aplicando métodos seguros, éticos y acordes a la normativa peruana. Nuestro servicio está respaldado por SERFOR, asegurando intervenciones eficientes y responsables en todo tipo de instalaciones.',
     mainImage:
-      '/servicios/control.png',
+      '/inicio/1.png',
   },
   {
     id: 2,
     title: 'CONTROL DE PLAGAS',
     description: 'Utilizamos metodologías y procesos eficientes en la eliminación de todo tipo de plagas rastreras o voladoras a niveles aceptables. Relacionamos los niveles poblacionales de las plagas y efectividad de los controles implementados.',
     mainImage:
-      '/servicios/controlp.png',
+      '/inicio/2.png',
   },
   {
     id: 3,
     title: 'DESINFECCION AMBIENTAL',
     description: 'Eliminación eficaz de microorganismos patógenos (bacterias, virus y hongos) en todo tipo de ambientes, mediante sistemas de nebulización en frío que permiten una cobertura uniforme y profunda. Aplicamos agentes químicos especializados que garantizan espacios seguros, higienizados y libres de contaminantes.',
     mainImage:
-      '/servicios/ambiente.png',
+      '/inicio/3.png',
   },
   {
     id: 4,
     title: 'CONSULTORIA EN SEGURIDAD Y MEDIO AMBIENTE',
     description: 'Impulsamos la gestión segura y sostenible de su empresa mediante asesoría especializada y elaboración de estudios ambientales.',
     mainImage:
-      '/servicios/seguridad.png',
+      '/inicio/4.png',
   },
   {
     id: 5,
     title: 'MANTENIMIENTO DE RESERVORIOS',
     description: 'Servicio especializado en la conservación y óptimo funcionamiento de reservorios de agua, previniendo fallas operativas y deterioro del sistema.',
     mainImage:
-      '/inicio/mantenimiento.jpg',
+      '/inicio/.png',
   },
   {
     id: 6,
     title: 'LIMPIEZA Y DESINFECCION DE RESERVORIOS',
     description: 'Limpieza profunda de paredes, pisos y la eliminación de toda materia orgánica (bacterias, hongos y sarro) o cuerpo extraño en un tanque, cisterna o reservorio a través de equipos mecánicos y eléctricos.',
     mainImage:
-      '/servicios/limpieza.png',
+      '/inicio/6.png',
   },
 ];
 

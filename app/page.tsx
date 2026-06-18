@@ -14,10 +14,11 @@ export default function PlastigesaPage() {
           <StatisticsSection />
         </section>
 
-        <section>
+        
+      </div>
+      <section>
           <ClientLogosSection />
         </section>
-      </div>
     </div>
   );
 }

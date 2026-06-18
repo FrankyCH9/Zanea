@@ -60,7 +60,7 @@ export default function StatisticsSection() {
       <div className="max-w-6xl mx-auto mt-12 px-6 lg:px-12 flex flex-col lg:flex-row items-center mb-16 gap-20">
         <div
           className="relative flex-shrink-0 scale-90 md:scale-100"
-          style={{ width: 420, height: 380 }}
+          style={{ width: 500, height: 450 }}
         >
           {hexItems.map((hex, i) => (
             <div
