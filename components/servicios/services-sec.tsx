@@ -1,9 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Shield, Bug, Droplets, Bird, Zap, CheckCircle2 } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import Image from "next/image";
+
+
 
 interface ServiceCategory {
   id: string;
@@ -199,7 +201,7 @@ const services: ServiceCategory[] = [
       },
     ],
   },
-  
+
   {
     id: "consultoria",
     title: "Consultoría Ambiental",
@@ -251,7 +253,11 @@ const services: ServiceCategory[] = [
 export function ServicesSec() {
   const [expandedService, setExpandedService] = useState<string | null>(
     services[0].id,
+    
   );
+  
+  const detailsRef = useRef<HTMLDivElement>(null);
+
 
   const selectedService = services.find((s) => s.id === expandedService);
   return (
@@ -283,7 +289,19 @@ export function ServicesSec() {
               {services.map((service) => (
                 <button
                   key={service.id}
-                  onClick={() => setExpandedService(service.id)}
+                  onClick={() => {
+                    setExpandedService(service.id);
+
+                    // Solo hace scroll en pantallas pequeñas
+                    if (window.innerWidth < 1024) {
+                      setTimeout(() => {
+                        detailsRef.current?.scrollIntoView({
+                          behavior: "smooth",
+                          block: "start",
+                        });
+                      }, 100);
+                    }
+                  }}
                   className={`w-full text-left p-5 rounded-2xl transition-all duration-300 flex items-start gap-4 border ${
                     expandedService === service.id
                       ? "bg-[#6CB519] text-white border-[#6CB519] shadow-2xl scale-[1.02]"
@@ -305,7 +323,10 @@ export function ServicesSec() {
           </div>
 
           {/* CENTRO - IMAGEN */}
-          <div className="relative h-[500px] lg:h-auto min-h-[500px] rounded-3xl overflow-hidden shadow-2xl border border-[#6CB519]/20">
+          <div
+            ref={detailsRef}
+            className="relative h-[500px] lg:h-auto min-h-[500px] rounded-3xl overflow-hidden shadow-2xl border border-[#6CB519]/20"
+          >
             {selectedService && (
               <>
                 <Image
