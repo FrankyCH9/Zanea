@@ -45,7 +45,7 @@ const galleryItems = [
     title: 'LIMPIEZA Y DESINFECCION DE RESERVORIOS',
     description: 'Limpieza profunda de paredes, pisos y la eliminación de toda materia orgánica (bacterias, hongos y sarro) o cuerpo extraño en un tanque, cisterna o reservorio a través de equipos mecánicos y eléctricos.',
     mainImage:
-      '/inicio/6.png',
+      '/inicio/5.png',
   },
 ];
 

@@ -137,7 +137,7 @@ const services: ServiceCategory[] = [
     id: "reservorios",
     title: "Limpieza de Reservorios",
     icon: <Droplets className="w-6 h-6" />,
-    image: "/servi/4.png",
+    image: "/servi/4.jpg",
     description:
       "Garantizamos condiciones adecuadas para el almacenamiento de agua",
     sections: [
